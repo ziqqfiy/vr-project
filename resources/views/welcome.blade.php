@@ -13,9 +13,13 @@
 
 <body>
     <a-scene>
-        <a-box position="-1.5 1 -1.5" rotation="0 0 0" color="#FFE77D"></a-box>
-        <a-cylinder position="-2 1 -3" rotation="0 0 0" color="#B06275"></a-cylinder>
-        <a-sky color="#3B3B3B"></a-sky>
+        <a-box height="3" width="8" position="0 3 -30" animation="property: position; to:0 3 30; dur: 3000; easing: linear; loop: false" color="gray"></a-box>
+        <a-box height="5" width="5" position="1.5 2.5 -40" animation="property: position; to:1.5 2.5 20; dur: 3000; easing: linear; loop: false" color="gray"></a-box>
+        <a-box height="5" width="5" position="-1.5 2.5 -50" animation="property: position; to:-1.5 2.5 10; dur: 3000; easing: linear; loop: false" color="gray"></a-box>
+
+        <a-plane position="0 0 0" rotation="-90 0 0" width="5" depth="5" height="5" color="white"></a-box>
+
+        <a-sky color="#cbded4"></a-sky>
     </a-scene>
 </body>
 
