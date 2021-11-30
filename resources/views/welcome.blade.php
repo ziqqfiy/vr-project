@@ -14,6 +14,8 @@
 <body>
     <a-scene>
         <a-box position="-1.5 1 -1.5" rotation="0 0 0" color="#FFE77D"></a-box>
+        <a-cylinder position="-2 1 -3" rotation="0 0 0" color="#B06275"></a-cylinder>
+        <a-sky color="#3B3B3B"></a-sky>
     </a-scene>
 </body>
 
