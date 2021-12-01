@@ -20,7 +20,7 @@
         <a-entity oculus-touch-controls="hand: right"></a-entity>
 
         <!-- Lights -->
-        <a-entity light="type:directional; castShadow:true; intensity: 0.45; color: #fede86; distance: 50; shadowCameraRight: 20; shadowCameraTop: 20" position="3.755 4.082 5.158"></a-entity>
+        <a-entity light="type:directional; castShadow:true; intensity: 0.45; color: #fede86; distance: 50; shadowCameraRight: 20; shadowCameraTop: 20; shadowRadius: 5" position="3.755 4.082 5.158"></a-entity>
         <a-light intensity="0.8" type="ambient" color="white"></a-light>
 
         <!-- Sound -->
@@ -63,10 +63,10 @@
         </a-entity>
 
         <!-- Grass -->
-        <a-box depth="150" width="150" height="1" color="#A3D1EE" position="0 -2 0"></a-box>
+        <a-box shadow="receive: true" depth="150" width="150" height="1" color="#A3D1EE" position="0 -5 0"></a-box>
 
         <!-- PLatform -->
-        <a-plane shadow="receive: true" position="0 0 -43" rotation="-90 0 0" width="3" depth="5" height="90" color="#FDCEBA" shadow position="0 -3.5 -1.5"></a-plane>
+        <a-box shadow="cast: true" position="0 -1 -43" width="5" depth="90" height="0.5" color="#FDCEBA"></a-box>
 
         <a-sky color="#665A8A" radius="60"></a-sky>
     </a-scene>
