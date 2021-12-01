@@ -1,10 +1,10 @@
-<p align="center" size="30px">moVRin</p>
+<p align="center" font-size="30px">moVRin</p>
 
 ## About moVRin
 Basically our web app will be a vr exercise game. 
 
  - Purpose: play game while exercise 
- - Aim user: everyone,
+ - Aim User: everyone
 
 Flow:
 
