@@ -20,7 +20,7 @@
         <a-entity oculus-touch-controls="hand: right"></a-entity>
 
         <!-- Lights -->
-        <a-entity light="type:directional; castShadow:true; intensity: 0.45; color: #fede86; distance: 50; shadowCameraRight: 20; shadowCameraTop: 20; shadowRadius: 5" position="3.755 4.082 5.158"></a-entity>
+        <a-entity light="type:directional; castShadow:true; intensity: 0.45; color: #fede86; distance: 50; shadowCameraRight: 20; shadowCameraTop: 20; shadowCameraLeft: -20; shadowRadius: 5" position="3.755 4.082 5.158"></a-entity>
         <a-light intensity="0.8" type="ambient" color="white"></a-light>
 
         <!-- Sound -->
