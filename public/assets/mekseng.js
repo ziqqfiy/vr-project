@@ -33,11 +33,11 @@ function setupObstacles() {
     removeObstacles(topLeftObstacle)
 }
 
-function teardownObstacles(){
+function teardownObstacles() {
     clearInterval(obstacleTimer);
 }
 
-function addObstaclesRandomlyLoop({intervalLength = 1000} = {}){
+function addObstaclesRandomlyLoop({ intervalLength = 1000 } = {}) {
     obstacleTimer = setInterval(addObstaclesRandomly, intervalLength);
 }
 
@@ -85,13 +85,42 @@ function addObstaclesRandomly({
     return numberOfObstaclesAdded;
 }
 
+/**************
+ * COLLISIONS *
+ **************/
+
+const POSITION_Z_OUT_OF_SIGHT = 1;
+const POSITION_Z_LINE_START = 0.6;
+const POSITION_Z_LINE_END = 0.7;
+
+function setupCollision() {
+}
+
 /********
  * GAME *
  ********/
 
+var isGameRunning = false;
+
+setupCollision();
+
 window.onload = function () {
     setupObstacles();
+    startGame();
+}
+
+function startGame() {
+    if (isGameRunning) return;
+    isGameRunning = true;
+
     addObstaclesRandomlyLoop();
+}
+
+function gameOver() {
+    isGameRunning = false;
+
+    alert('Game Over!');
+    teardownObstacles();
 }
 
 /*************
