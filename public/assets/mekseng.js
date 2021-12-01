@@ -93,7 +93,21 @@ const POSITION_Z_OUT_OF_SIGHT = 1;
 const POSITION_Z_LINE_START = 0.6;
 const POSITION_Z_LINE_END = 0.7;
 
-function setupCollision() {
+function setupCollisions() {
+    AFRAME.registerComponent('player', {
+        tick: function () {
+            document.querySelectorAll('.obstacle').forEach(function (obstacle) {
+                position = obstacle.getAttribute('position');
+                obstacle_id = obstacle.getAttribute('id');
+
+                if (position.z > POSITION_Z_OUT_OF_SIGHT) {
+                    removeObstacles(obstacle);
+                }
+
+                if (!isGameRunning) return;
+            })
+        }
+    })
 }
 
 /********
@@ -102,7 +116,7 @@ function setupCollision() {
 
 var isGameRunning = false;
 
-setupCollision();
+setupCollisions()
 
 window.onload = function () {
     setupObstacles();
