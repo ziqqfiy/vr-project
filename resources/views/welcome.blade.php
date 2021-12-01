@@ -27,7 +27,7 @@
             <a-box shadow="cast: true" height="3" width="8" depth="5" position="0 3 -110" animation="property: position; to:0 3 10; dur: 7000; easing: linear; loop: true" color="orange" material="opacity: 0.8; transparency: true"></a-box>
         </a-entity>
 
-        <a-plane shadow="receive: true" position="0 0 -40" rotation="-90 0 0" width="7" depth="5" height="90" color="white"></a-plane>
+        <a-plane shadow="receive: true" position="0 0 -40" rotation="-90 0 0" width="3" depth="5" height="90" color="white"></a-plane>
         <a-sky radius="50" color="#cbded4"></a-sky>
     </a-scene>
 </body>
