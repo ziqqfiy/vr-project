@@ -1,4 +1,4 @@
-<p align="center" font-size="30px">moVRin</p>
+<h1 align="center">moVRin</h1>
 
 ## About moVRin
 Basically our web app will be a vr exercise game. 
