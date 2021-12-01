@@ -62,11 +62,11 @@
             </a-entity>
         </a-entity>
 
-        <!-- Grass -->
+        <!-- Floor -->
         <a-box shadow="receive: true" depth="150" width="150" height="1" color="#A3D1EE" position="0 -5 0"></a-box>
 
         <!-- PLatform -->
-        <a-box shadow="cast: true" position="0 -1 -43" width="5" depth="90" height="0.5" color="#FDCEBA"></a-box>
+        <a-box shadow="cast: true" position="0 -0.3 -43" width="5" depth="90" height="0.5" color="#FDCEBA"></a-box>
 
         <a-sky color="#665A8A" radius="60"></a-sky>
     </a-scene>
