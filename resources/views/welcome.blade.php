@@ -5,58 +5,64 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>VR Test</title>
+    <title>moVRin</title>
 
     <!-- Script -->
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="assets/mekseng.js"></script>
     <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
 
 </head>
 
 <body>
-    <a-scene>
-        <a-entity light="type: ambient; color: #BBB; castShadow: true"></a-entity>
-        <a-entity light="type: directional; color: #FFF; intensity: 0.6 castShadow: true" position="-0.5 1 1"></a-entity>
+    <a-scene fog="type: linear; color: #F2DDC1; near:20; far:50">
+        <!-- Lights -->
+        <a-light type="directional" castShadow="true" intensity="0.45" color="white;" position="1 1 2"></a-light>
+        <a-light intensity="0.8" type="ambient" color="white"></a-light>
 
         <!-- moVRin -->
         <a-assets>
-            <a-asset-item id="montserrat" src="fonts\montserrat_black.typeface.json"></a-asset-item>
+            <a-asset-item id="montserrat" src="fonts/montserrat_black.typeface.json"></a-asset-item>
         </a-assets>
 
-        <a-entity text-geometry="value: moVRin; font: #montserrat; size: 5 height: 0.1; bevelEnabled: true; bevelSize: 0.02; bevelThickness: 1" position="-15 25 -40" rotation="25 0 0" material="color: #EED7CE"></a-entity>
+        <a-entity text-geometry="value: moVRin; font: #montserrat; size: 5 height: 0.1; bevelEnabled: true; bevelSize: 0.02; bevelThickness: 1" position="-15 25 -30" rotation="25 0 0" material="color: #F0D9FF"></a-entity>
 
         <!-- Obstacles -->
-        <a-entity position="0 0 -35" animation="property: position; to: 0 0 180; dur: 7000; easing: linear; loop: true">
+        <a-entity id="obstacles-container">
             <!-- Top -->
-            <a-box shadow="cast: true" height="3.7" width="8" depth="5" position="0 3.3 -30" color="#FFC4E1" material="opacity: 1; transparency: true"></a-box>
+            <a-entity id="top-obstacle" position="0 3.3 0">
+                <a-box shadow="cast: true" height="3.7" width="8" depth="5" color="orange" material="opacity: 0.7; transparency: true" animation="property: position; from: 0 0 -50; to: 0 0 10; dur: 4000; easing: linear"></a-box>
+            </a-entity>
 
             <!-- Right -->
-            <a-box shadow="cast: true" height="5" width="1.5" depth="5" position="0.75 2.5 -50" color="#FFC4E1" material="opacity: 1; transparency: true"></a-box>
+            <a-entity id="right-obstacle" position="0.75 2.5 0">
+                <a-box shadow="cast: true" height="5" width="1.5" depth="5" color="orange" material="opacity: 0.7; transparency: true" animation="property: position; from: 0 0 -50; to: 0 0 10; dur: 4000; easing: linear"></a-box>
+            </a-entity>
 
             <!-- Left -->
-            <a-box shadow="cast: true" height="5" width="1.5" depth="5" position="-0.75 2.5 -70" color="#FFC4E1" material="opacity: 1; transparency: true"></a-box>
-
-            <!-- Right -->
-            <a-box shadow="cast: true" height="5" width="1.5" depth="5" position="0.75 2.5 -90" color="#FFC4E1" material="opacity: 1; transparency: true"></a-box>
-
-            <!-- Left -->
-            <a-box shadow="cast: true" height="5" width="1.5" depth="5" position="-0.75 2.5 -110" color="#FFC4E1" material="opacity: 1; transparency: true"></a-box>d
-
-            <!-- Top -->
-            <a-box shadow="cast: true" height="3.7" width="8" depth="5" position="0 3.3 -130" color="#FFC4E1" material="opacity: 1; transparency: true"></a-box>
+            <a-entity id="left-obstacle" position="-0.75 2.5 0">
+                <a-box shadow="cast: true" height="5" width="1.5" depth="5" color="orange" material="opacity: 0.7; transparency: true" animation="property: position; from: 0 0 -50; to: 0 0 10; dur: 4000; easing: linear"></a-box>
+            </a-entity>
 
             <!-- Top-Left -->
-            <a-box shadow="cast: true" height="5" width="1.5" depth="5" position="-0.75 2.5 -150" color="#FFC4E1" material="opacity: 1; transparency: true"></a-box>d
-            <a-box shadow="cast: true" height="3.7" width="8" depth="5" position="0 3.3 -150" color="#FFC4E1" material="opacity: 1; transparency: true"></a-box>
+            <a-entity id="top-left-obstacle">
+                <a-box shadow="cast: true" height="5" width="1.5" depth="5" position="-0.75 2.5 0" color="orange" material="opacity: 0.7; transparency: true" animation="property: position; from: -0.75 2.5 -50; to: -0.75 2.5 10; dur: 4000; easing: linear"></a-box>
+                <a-box shadow="cast: true" height="3.7" width="8" depth="5" position="0 3.3 0" color="orange" material="opacity: 0.7; transparency: true" animation="property: position; from: 0 3.3 -50; to: 0 3.3 10; dur: 4000; easing: linear"></a-box>
+            </a-entity>
 
             <!-- Top-Right -->
-            <a-box shadow="cast: true" height="5" width="1.5" depth="5" position="0.75 2.5 -170" color="#FFC4E1" material="opacity: 1; transparency: true"></a-box>
-            <a-box shadow="cast: true" height="3.7" width="8" depth="5" position="0 3.3 -170" color="#FFC4E1" material="opacity: 1; transparency: true"></a-box>
+            <a-entity id="top-right-obstacle">
+                <a-box shadow="cast: true" height="5" width="1.5" depth="5" position="0.75 2.5 0" color="orange" material="opacity: 0.7; transparency: true" animation="property: position; from: 0.75 2.5 -50; to: 0.75 2.5 10; dur: 4000; easing: linear"></a-box>
+                <a-box shadow="cast: true" height="3.7" width="8" depth="5" position="0 3.3 0" color="orange" material="opacity: 0.7; transparency: true" animation="property: position; from: 0 3.3 -50; to: 0 3.3 10; dur: 4000; easing: linear"></a-box>
+            </a-entity>
         </a-entity>
 
-        <a-plane shadow="receive: true" position="0 0 -44" rotation="-90 0 0" width="3" depth="5" height="90" color="#F2DDC1"></a-plane>
+        <!-- Grass -->
+        <a-box depth="150" width="150" height="1" color="#A3D1EE" position="0 -2 0"></a-box>
 
-        <a-sky color="#cbded4" radius="60"></a-sky>
+        <a-plane shadow="receive: true" position="0 0 -43" rotation="-90 0 0" width="3" depth="5" height="90" color="#F0D9FF" shadow position="0 -3.5 -1.5"></a-plane>
+
+        <a-sky color="#F2DDC1" radius="60"></a-sky>
     </a-scene>
 </body>
 
