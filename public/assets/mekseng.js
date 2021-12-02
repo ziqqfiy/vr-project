@@ -111,6 +111,10 @@ function setupCollisions() {
 }
 
 /********
+ * Gradient Sky *
+ ********/
+
+/********
  * GAME *
  ********/
 

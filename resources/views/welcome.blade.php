@@ -16,21 +16,21 @@
 <body>
     <a-scene fog="type: linear; color: #665A8A; near:5; far:50">
         <!-- Oculus Touch -->
-        <a-entity oculus-touch-controls="hand: left"></a-entity>
-        <a-entity oculus-touch-controls="hand: right"></a-entity>
+        <a-entity id="left-controller" oculus-touch-controls="hand: left"></a-entity>
+        <a-entity id="right-controller" oculus-touch-controls="hand: right"></a-entity>
 
         <!-- Lights -->
-        <a-entity light="type:directional; castShadow:true; intensity: 0.45; color: #fede86; distance: 50; shadowCameraRight: 20; shadowCameraTop: 20; shadowCameraLeft: -20; shadowRadius: 5" position="3.755 4.082 5.158"></a-entity>
-        <a-light intensity="0.8" type="ambient" color="white"></a-light>
+        <a-entity id="sunlight" light="type:directional; castShadow:true; intensity: 0.45; color: #fede86; distance: 50; shadowCameraRight: 20; shadowCameraTop: 20; shadowCameraLeft: -20; shadowRadius: 5" position="3.755 4.082 5.158"></a-entity>
+        <a-light id="ambient" intensity="0.8" type="ambient" color="white"></a-light>
 
         <!-- Sound -->
-        <a-sound src="url(assets/bg_music.mp3)" autoplay="true" loop="true" volume="1"></a-sound>
+        <a-sound id="bgm" src="url(assets/bg_music.mp3)" autoplay="true" loop="true" volume="1"></a-sound>
 
         <!-- moVRin -->
         <a-assets>
             <a-asset-item id="montserrat" src="fonts/montserrat_black.typeface.json"></a-asset-item>
         </a-assets>
-        <a-entity text-geometry="value: moVRin; font: #montserrat; size: 5 height: 0.1; bevelEnabled: true; bevelSize: 0; bevelThickness: 1" position="-15 20 -35" rotation="25 0 0" material="fog: false; color: #A0CEEA"></a-entity>
+        <a-entity id="title" text-geometry="value: moVRin; font: #montserrat; size: 5 height: 0.1; bevelEnabled: true; bevelSize: 0; bevelThickness: 1" position="-15 20 -35" rotation="25 0 0" material="fog: false; color: #A0CEEA"></a-entity>
 
         <!-- Obstacles -->
         <a-entity id="obstacles-container">
@@ -63,19 +63,19 @@
         </a-entity>
 
         <!-- Floor -->
-        <a-box shadow="receive: true" depth="150" width="150" height="1" color="#A3D1EE" position="0 -5 0"></a-box>
+        <a-box id="floor" shadow="receive: true" depth="150" width="150" height="1" color="#A3D1EE" position="0 -5 0"></a-box>
 
         <!-- Sun -->
-        <a-sphere color="#fede86" position="9.283 10.557 14.033" scale="5 5 5" material="emissive: #fede86; emissiveIntensity: 1"></a-sphere>
+        <a-sphere id="sun" color="#fede86" position="9.283 10.557 14.033" scale="5 5 5" material="emissive: #fede86; emissiveIntensity: 1"></a-sphere>
 
         <!-- PLatform -->
-        <a-box shadow="cast: true" position="0 -0.3 -0.505" width="5" depth="5" height="0.5" color="#FDCEBA"></a-box>
+        <a-box id="platform" shadow="cast: true" position="0 -0.3 -0.505" width="5" depth="5" height="0.5" color="#FDCEBA"></a-box>
 
         <!-- Pathway -->
-        <a-box shadow="cast: true" position="0 -0.300 -35.205" width="5" depth="60" height="0.5" color="#FDCEBA"></a-box>
+        <a-box id="pathway" shadow="cast: true" position="0 -0.300 -35.205" width="5" depth="60" height="0.5" color="#FDCEBA"></a-box>
 
         <!-- Sky -->
-        <a-sky color="#665A8A" radius="60"></a-sky>
+        <a-sky color="#665A8A"></a-sky>
     </a-scene>
 </body>
 
