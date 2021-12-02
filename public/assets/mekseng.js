@@ -16,6 +16,7 @@ var rightObstacle;
 var middleObstacle;
 var topRightObstacle;
 var topLeftObstacle;
+var topMiddleObstacle;
 
 function setupObstacles() {
     topObstacle = document.getElementById('top-obstacle');
@@ -24,9 +25,10 @@ function setupObstacles() {
     middleObstacle = document.getElementById('middle-obstacle');
     topRightObstacle = document.getElementById('top-right-obstacle');
     topLeftObstacle = document.getElementById('top-left-obstacle');
+    topMiddleObstacle = document.getElementById('top-middle-obstacle');
 
     ObstaclesContainer = document.getElementById('obstacles-container');
-    templates = [topObstacle, leftObstacle, rightObstacle, middleObstacle, topRightObstacle, topLeftObstacle];
+    templates = [topObstacle, leftObstacle, rightObstacle, middleObstacle, topRightObstacle, topLeftObstacle, topMiddleObstacle];
 
     removeObstacles(topObstacle)
     removeObstacles(leftObstacle)
@@ -34,6 +36,7 @@ function setupObstacles() {
     removeObstacles(middleObstacle)
     removeObstacles(topRightObstacle)
     removeObstacles(topLeftObstacle)
+    removeObstacles(topMiddleObstacle)
 }
 
 function teardownObstacles() {
@@ -66,6 +69,7 @@ function addObstaclesRandomly({
     probObstacleMiddle = 0.5,
     probObstacleTopLeft = 0.5,
     probObstacleTopRight = 0.5,
+    probObstacleTopMiddle = 0.5,
     maxNumberObstacles = 1,
 } = {}) {
     var obstacles = [
@@ -75,6 +79,7 @@ function addObstaclesRandomly({
         { probability: probObstacleMiddle, position_index: 3 },
         { probability: probObstacleTopRight, position_index: 4 },
         { probability: probObstacleTopLeft, position_index: 5 },
+        { probability: probObstacleTopMiddle, position_index: 6 },
     ]
 
     shuffle(obstacles);
