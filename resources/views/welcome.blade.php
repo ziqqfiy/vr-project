@@ -74,6 +74,7 @@
         <!-- Pathway -->
         <a-box shadow="cast: true" position="0 -0.300 -35.205" width="5" depth="60" height="0.5" color="#FDCEBA"></a-box>
 
+        <!-- Sky -->
         <a-sky color="#665A8A" radius="60"></a-sky>
     </a-scene>
 </body>
