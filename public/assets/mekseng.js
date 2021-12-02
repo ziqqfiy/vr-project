@@ -40,7 +40,7 @@ function teardownObstacles() {
     clearInterval(obstacleTimer);
 }
 
-function addObstaclesRandomlyLoop({ intervalLength = 500 } = {}) {
+function addObstaclesRandomlyLoop({ intervalLength = 600 } = {}) {
     obstacleTimer = setInterval(addObstaclesRandomly, intervalLength);
 }
 
