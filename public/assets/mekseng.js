@@ -13,6 +13,7 @@ var numberOfObstacles = 0;
 var topObstacle;
 var leftObstacle;
 var rightObstacle;
+var middleObstacle;
 var topRightObstacle;
 var topLeftObstacle;
 
@@ -20,15 +21,17 @@ function setupObstacles() {
     topObstacle = document.getElementById('top-obstacle');
     leftObstacle = document.getElementById('left-obstacle');
     rightObstacle = document.getElementById('right-obstacle');
+    middleObstacle = document.getElementById('middle-obstacle');
     topRightObstacle = document.getElementById('top-right-obstacle');
     topLeftObstacle = document.getElementById('top-left-obstacle');
 
     ObstaclesContainer = document.getElementById('obstacles-container');
-    templates = [topObstacle, leftObstacle, rightObstacle, topRightObstacle, topLeftObstacle];
+    templates = [topObstacle, leftObstacle, rightObstacle, middleObstacle, topRightObstacle, topLeftObstacle];
 
     removeObstacles(topObstacle)
     removeObstacles(leftObstacle)
     removeObstacles(rightObstacle)
+    removeObstacles(middleObstacle)
     removeObstacles(topRightObstacle)
     removeObstacles(topLeftObstacle)
 }
@@ -58,18 +61,20 @@ function addObstacleTo(position_index) {
 
 function addObstaclesRandomly({
     probObstacleTop = 0.5,
-    probObstacleLeft = 0.7,
-    probObstacleRight = 0.7,
-    probObstacleTopLeft = 0.4,
-    probObstacleTopRight = 0.4,
+    probObstacleLeft = 0.5,
+    probObstacleRight = 0.5,
+    probObstacleMiddle = 0.5,
+    probObstacleTopLeft = 0.5,
+    probObstacleTopRight = 0.5,
     maxNumberObstacles = 1,
 } = {}) {
     var obstacles = [
         { probability: probObstacleTop, position_index: 0 },
         { probability: probObstacleLeft, position_index: 1 },
         { probability: probObstacleRight, position_index: 2 },
-        { probability: probObstacleTopRight, position_index: 3 },
-        { probability: probObstacleTopLeft, position_index: 4 },
+        { probability: probObstacleMiddle, position_index: 3 },
+        { probability: probObstacleTopRight, position_index: 4 },
+        { probability: probObstacleTopLeft, position_index: 5 },
     ]
 
     shuffle(obstacles);

@@ -15,6 +15,9 @@
 
 <body>
     <a-scene fog="type: linear; color: #665A8A; near:5; far:50">
+        <!-- Player -->
+        <a-entity id="camera" camera="active: true" look-controls wasd-controls position="0 1.6 0"></a-entity>
+
         <!-- Oculus Touch -->
         <a-entity id="left-controller" oculus-touch-controls="hand: left"></a-entity>
         <a-entity id="right-controller" oculus-touch-controls="hand: right"></a-entity>
@@ -35,30 +38,36 @@
         <!-- Obstacles -->
         <a-entity id="obstacles-container">
             <!-- Top -->
-            <a-entity class"obstacle" id="top-obstacle" position="0 3.3 0">
-                <a-box shadow="cast: true" height="3.7" width="8" depth="5" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 6000; easing: linear"></a-box>
+            <a-entity class="obstacle" id="top-obstacle" position="0 2.1 0">
+                <a-box shadow="cast: true" height="1.8" width="3" depth="5" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 4000; easing: linear"></a-box>
             </a-entity>
 
             <!-- Right -->
-            <a-entity class"obstacle" id="right-obstacle" position="2 2.5 0">
-                <a-box shadow="cast: true" height="5" width="4" depth="5" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 6000; easing: linear"></a-box>
+            <a-entity class="obstacle" id="right-obstacle" position="0.75 1.5 0">
+                <a-box shadow="cast: true" height="3" width="1.5" depth="5" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 4000; easing: linear"></a-box>
             </a-entity>
 
             <!-- Left -->
-            <a-entity class"obstacle" id="left-obstacle" position="-2 2.5 0">
-                <a-box shadow="cast: true" height="5" width="4" depth="5" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 6000; easing: linear"></a-box>
+            <a-entity class="obstacle" id="left-obstacle" position="-0.75 1.5 0">
+                <a-box shadow="cast: true" height="3" width="1.5" depth="5" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 4000; easing: linear"></a-box>
+            </a-entity>
+
+            <!-- Middle -->
+            <a-entity class="obstacle" id="middle-obstacle">
+                <a-box shadow="cast: true" height="3" width="1" depth="5" position="1 1.5 0" color="#DE87A4" material="opacity: 1" animation="property: position; from: 1 1.5 -70; to: 1 1.5 70; dur: 4000; easing: linear"></a-box>
+                <a-box shadow="cast: true" height="3" width="1" depth="5" position="-1 1.5 0" color="#DE87A4" material="opacity: 1" animation="property: position; from: -1 1.5 -70; to: -1 1.5 70; dur: 4000; easing: linear"></a-box>
             </a-entity>
 
             <!-- Top-Left -->
-            <a-entity class"obstacle" id="top-left-obstacle">
-                <a-box shadow="cast: true" height="5" width="4" depth="5" position="-2 2.5 0" color="#DE87A4" material="opacity: 1" animation="property: position; from: -2 2.5 -70; to: -2 2.5 70; dur: 6000; easing: linear"></a-box>
-                <a-box shadow="cast: true" height="3.7" width="8" depth="5" position="0 3.3 0" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 3.3 -70; to: 0 3.3 70; dur: 6000; easing: linear"></a-box>
+            <a-entity class="obstacle" id="top-left-obstacle">
+                <a-box shadow="cast: true" height="3" width="1.5" depth="5" position="-0.75 1.5 0" color="#DE87A4" material="opacity: 1" animation="property: position; from: -0.75 1.5 -70; to: -0.75 1.5 70; dur: 4000; easing: linear"></a-box>
+                <a-box shadow="cast: true" height="1.8" width="3" depth="5" position="0 2.1 0" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 2.1 -70; to: 0 2.1 70; dur: 4000; easing: linear"></a-box>
             </a-entity>
 
             <!-- Top-Right -->
-            <a-entity class"obstacle" id="top-right-obstacle">
-                <a-box shadow="cast: true" height="5" width="4" depth="5" position="2 2.5 0" color="#DE87A4" material="opacity: 1" animation="property: position; from: 2 2.5 -70; to: 2 2.5 70; dur: 6000; easing: linear"></a-box>
-                <a-box shadow="cast: true" height="3.7" width="8" depth="5" position="0 3.3 0" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 3.3 -70; to: 0 3.3 70; dur: 6000; easing: linear"></a-box>
+            <a-entity class="obstacle" id="top-right-obstacle">
+                <a-box shadow="cast: true" height="3" width="1.5" depth="5" position="0.75 1.5 0" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0.75 1.5 -70; to: 0.75 1.5 70; dur: 4000; easing: linear"></a-box>
+                <a-box shadow="cast: true" height="1.8" width="3" depth="5" position="0 2.1 0" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 2.1 -70; to: 0 2.1 70; dur: 4000; easing: linear"></a-box>
             </a-entity>
         </a-entity>
 
@@ -69,10 +78,10 @@
         <a-sphere id="sun" color="#fede86" position="9.283 10.557 14.033" scale="5 5 5" material="emissive: #fede86; emissiveIntensity: 1"></a-sphere>
 
         <!-- PLatform -->
-        <a-box id="platform" shadow="cast: true" position="0 -0.3 -0.505" width="5" depth="5" height="0.5" color="#FDCEBA"></a-box>
+        <a-box id="platform" shadow="cast: true" position="0 -0.3 0" width="3" depth="3" height="0.5" color="#FDCEBA"></a-box>
 
         <!-- Pathway -->
-        <a-box id="pathway" shadow="cast: true" position="0 -0.300 -35.205" width="5" depth="60" height="0.5" color="#FDCEBA"></a-box>
+        <a-box id="pathway" shadow="cast: true" position="0 -0.3 -40" width="3" depth="60" height="0.5" color="#FDCEBA"></a-box>
 
         <!-- Sky -->
         <a-sky color="#665A8A"></a-sky>
