@@ -11,6 +11,8 @@ var ObstaclesContainer;
 var numberOfObstacles = 0;
 
 var topObstacle;
+var leftObstacle;
+var rightObstacle;
 var wideLeftObstacle;
 var wideRightObstacle;
 var middleObstacle;
@@ -20,6 +22,8 @@ var topMiddleObstacle;
 
 function setupObstacles() {
     topObstacle = document.getElementById('top-obstacle');
+    leftObstacle = document.getElementById('left-obstacle');
+    rightObstacle = document.getElementById('right-obstacle');
     wideLeftObstacle = document.getElementById('wide-left-obstacle');
     wideRightObstacle = document.getElementById('wide-right-obstacle');
     middleObstacle = document.getElementById('middle-obstacle');
@@ -28,9 +32,11 @@ function setupObstacles() {
     topMiddleObstacle = document.getElementById('top-middle-obstacle');
 
     ObstaclesContainer = document.getElementById('obstacles-container');
-    templates = [topObstacle, wideLeftObstacle, wideRightObstacle, middleObstacle, topRightObstacle, topLeftObstacle, topMiddleObstacle];
+    templates = [topObstacle, leftObstacle, rightObstacle, wideLeftObstacle, wideRightObstacle, middleObstacle, topRightObstacle, topLeftObstacle, topMiddleObstacle];
 
     removeObstacles(topObstacle)
+    removeObstacles(leftObstacle)
+    removeObstacles(rightObstacle)
     removeObstacles(wideLeftObstacle)
     removeObstacles(wideRightObstacle)
     removeObstacles(middleObstacle)
@@ -64,6 +70,8 @@ function addObstacleTo(position_index) {
 
 function addObstaclesRandomly({
     probObstacleTop = 0.5,
+    probObstacleLeft = 0.5,
+    probObstacleRight = 0.5,
     probObstacleWideLeft = 0.5,
     probObstacleWideRight = 0.5,
     probObstacleMiddle = 0.5,
@@ -74,12 +82,14 @@ function addObstaclesRandomly({
 } = {}) {
     var obstacles = [
         { probability: probObstacleTop, position_index: 0 },
-        { probability: probObstacleWideLeft, position_index: 1 },
-        { probability: probObstacleWideRight, position_index: 2 },
-        { probability: probObstacleMiddle, position_index: 3 },
-        { probability: probObstacleTopRight, position_index: 4 },
-        { probability: probObstacleTopLeft, position_index: 5 },
-        { probability: probObstacleTopMiddle, position_index: 6 },
+        { probability: probObstacleLeft, position_index: 1 },
+        { probability: probObstacleRight, position_index: 2 },
+        { probability: probObstacleWideLeft, position_index: 3 },
+        { probability: probObstacleWideRight, position_index: 4 },
+        { probability: probObstacleMiddle, position_index: 5 },
+        { probability: probObstacleTopRight, position_index: 6 },
+        { probability: probObstacleTopLeft, position_index: 7 },
+        { probability: probObstacleTopMiddle, position_index: 8 },
     ]
 
     shuffle(obstacles);
