@@ -70,14 +70,14 @@ function addObstacleTo(position_index) {
 
 function addObstaclesRandomly({
     probObstacleTop = 0.5,
-    probObstacleLeft = 0.5,
-    probObstacleRight = 0.5,
-    probObstacleWideLeft = 0.5,
-    probObstacleWideRight = 0.5,
-    probObstacleMiddle = 0.5,
-    probObstacleTopLeft = 0.3,
-    probObstacleTopRight = 0.3,
-    probObstacleTopMiddle = 0.3,
+    probObstacleLeft = 1,
+    probObstacleRight = 1,
+    probObstacleWideLeft = 1,
+    probObstacleWideRight = 1,
+    probObstacleMiddle = 1,
+    probObstacleTopLeft = 0.5,
+    probObstacleTopRight = 0.5,
+    probObstacleTopMiddle = 0.5,
     maxNumberObstacles = 1,
 } = {}) {
     var obstacles = [
