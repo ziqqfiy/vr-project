@@ -27,15 +27,15 @@
         <a-entity id="player" camera="active: true" look-controls wasd-controls position="0 1.6 0"></a-entity>
 
         <!-- Oculus Touch -->
-        <a-entity id="left-controller" oculus-touch-controls="hand: left"></a-entity>
-        <a-entity id="right-controller" oculus-touch-controls="hand: right"></a-entity>
+        <a-entity id="left-controller" oculus-touch-controls="hand: left; controllerType: oculus-touch-v3"></a-entity>
+        <a-entity id="right-controller" oculus-touch-controls="hand: right; controllerType: oculus-touch-v3"></a-entity>
 
         <!-- Lights -->
         <a-entity id="sunlight" light="type:directional; castShadow:true; intensity: 0.45; color: #fede86; distance: 50; shadowCameraRight: 20; shadowCameraTop: 20; shadowCameraLeft: -20; shadowRadius: 5" position="3.755 4.082 5.158"></a-entity>
         <a-light id="ambient" intensity="0.8" type="ambient" color="white"></a-light>
 
         <!-- Sound -->
-        <a-entity sound="src: #bgm; autoplay: true; loop: true; volume: 1" position="0 2 0"></a-entity>
+        <a-entity id="sound" sound="src: #bgm; autoplay: true; loop: true; volume: 1" position="0 2 0"></a-entity>
 
         <!-- moVRin -->
         <a-entity id="title" text-geometry="value: moVRin; font: #montserrat; size: 5 height: 0.1; bevelEnabled: true; bevelSize: 0; bevelThickness: 1" position="-15 20 -35" rotation="25 0 0" material="fog: false; color: #A0CEEA"></a-entity>
@@ -51,7 +51,7 @@
 
             <!-- Right -->
             <a-entity class="obstacle" id="right-obstacle" position="0.75 1.5 0">
-                <a-box shadow="cast: true" height="3" width="2" depth="5" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 8000; easing: linear"></a-box>
+                <a-box shadow="cast: true" height="3" width="1.5" depth="5" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 8000; easing: linear"></a-box>
             </a-entity>
 
             <!-- Left -->
