@@ -19,6 +19,8 @@
         <a-assets>
             <a-asset-item id="montserrat" src="fonts/montserrat_black.typeface.json"></a-asset-item>
             <audio id="bgm" src="assets/bg_music.mp3"></audio>
+            <a-asset-item id="tree-obj" src="assets/lowpolytree.obj"></a-asset-item>
+            <a-asset-item id="tree-mtl" src="assets/lowpolytree.mtl"></a-asset-item>
         </a-assets>
 
         <!-- Player -->
@@ -37,6 +39,8 @@
 
         <!-- moVRin -->
         <a-entity id="title" text-geometry="value: moVRin; font: #montserrat; size: 5 height: 0.1; bevelEnabled: true; bevelSize: 0; bevelThickness: 1" position="-15 20 -35" rotation="25 0 0" material="fog: false; color: #A0CEEA"></a-entity>
+
+        <a-entity position="0 0 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
 
         <!-- Obstacles -->
         <a-entity id="obstacles-container">
