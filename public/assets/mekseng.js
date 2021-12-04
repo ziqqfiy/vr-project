@@ -75,9 +75,9 @@ function addObstaclesRandomly({
     probObstacleWideLeft = 0.5,
     probObstacleWideRight = 0.5,
     probObstacleMiddle = 0.5,
-    probObstacleTopLeft = 0.5,
-    probObstacleTopRight = 0.5,
-    probObstacleTopMiddle = 0.5,
+    probObstacleTopLeft = 0.3,
+    probObstacleTopRight = 0.3,
+    probObstacleTopMiddle = 0.3,
     maxNumberObstacles = 1,
 } = {}) {
     var obstacles = [
