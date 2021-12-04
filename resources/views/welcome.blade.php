@@ -45,14 +45,14 @@
                 <a-box shadow="cast: true" height="1.8" width="3" depth="5" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 8000; easing: linear"></a-box>
             </a-entity>
 
-            <!-- Right -->
-            <a-entity class="obstacle" id="right-obstacle" position="0.75 1.5 0">
-                <a-box shadow="cast: true" height="3" width="1.5" depth="5" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 8000; easing: linear"></a-box>
+            <!-- Wide-Right -->
+            <a-entity class="obstacle" id="wide-right-obstacle" position="0.5 1.5 0">
+                <a-box shadow="cast: true" height="3" width="2" depth="5" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 8000; easing: linear"></a-box>
             </a-entity>
 
-            <!-- Left -->
-            <a-entity class="obstacle" id="left-obstacle" position="-0.75 1.5 0">
-                <a-box shadow="cast: true" height="3" width="1.5" depth="5" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 8000; easing: linear"></a-box>
+            <!-- Wide-Left -->
+            <a-entity class="obstacle" id="wide-left-obstacle" position="-0.5 1.5 0">
+                <a-box shadow="cast: true" height="3" width="2" depth="5" color="#DE87A4" material="opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 8000; easing: linear"></a-box>
             </a-entity>
 
             <!-- Middle -->
@@ -94,7 +94,7 @@
         <a-box id="pathway" shadow="cast: true" position="0 -0.3 -40" width="3" depth="60" height="0.5" color="#FDCEBA"></a-box>
 
         <!-- Sky -->
-        <a-sky color="#665A8A"></a-sky>
+        <a-sky id="sky" color="#665A8A"></a-sky>
     </a-scene>
 </body>
 
