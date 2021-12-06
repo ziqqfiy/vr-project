@@ -193,8 +193,14 @@ AFRAME.registerComponent('obstacle-despawn', {
     tick: function () {
         document.querySelectorAll('.obstacle').forEach(function (obstacle) {
             position = obstacle.getAttribute('position');
+            obstacle_id = obstacle.getAttribute('id');
             if (position.z > 20) {
                 removeObstacles(obstacle);
+            }
+
+            if (position.z > 1) {
+                addScore(obstacle_id);
+                updateScoreDisplay();
             }
         })
     }
@@ -219,17 +225,18 @@ function setupScore() {
 }
 
 function teardownScore() {
-    scoreDisplay.setAttribute('value', '');
+    scoreDisplay.setAttribute('text-geometry', 'value', '');
 }
 
-function addScoreForObstacle(obstacle_id) {
+function addScore() {
     if (countedObstacle.has(obstacle_id)) return;
     score += 1;
     countedObstacle.add(obstacle_id);
 }
 
 function updateScoreDisplay() {
-    scoreDisplay.setAttribute('value', score);
+    let s = score.toString();
+    scoreDisplay.setAttribute("text-geometry", "value", s);
 }
 
 /********
@@ -250,20 +257,20 @@ window.onload = function () {
     startGame();
 }
 
-function startGame() {
-    if (isGameRunning) return;
-    isGameRunning = true;
-    setupScore();
-    updateScoreDisplay();
-    addObstaclesRandomlyLoop();
-}
-
 function gameOver() {
     isGameRunning = false;
 
     alert('Game Over!');
     teardownObstacles();
     teardownScore();
+}
+
+function startGame() {
+    if (isGameRunning) return;
+    isGameRunning = true;
+    setupScore();
+    updateScoreDisplay();
+    addObstaclesRandomlyLoop();
 }
 
 /*************

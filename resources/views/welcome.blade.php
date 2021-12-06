@@ -44,7 +44,7 @@
         <a-entity id="title" text-geometry="value: moVRin; font: #montserrat; size: 5 height: 0.1; bevelEnabled: true; bevelSize: 0; bevelThickness: 1" position="-15 20 -35" rotation="25 0 0" material="fog: false; color: #A0CEEA"></a-entity>
        
         <!-- Score -->
-        <a-entity id="score" shadow="cast: true; receive: true" text-geometry="value: ; font: #montserrat; size: 5 height: 0.1; bevelEnabled: true; bevelSize: 0; bevelThickness: 1" position="6 -4.5 -20.5" rotation="0 -18 0" material="fog: false; color: #FDCEBA"></a-entity>
+        <a-entity id="score" shadow="cast: true; receive: true" text-geometry="value: ?; font: #montserrat; size: 5 height: 0.1; bevelEnabled: true; bevelSize: 0; bevelThickness: 1" position="6 -4.4 -20.5" rotation="0 -18 0" material="fog: false; color: #FDCEBA"></a-entity>
        
         <!-- Tree -->
         <a-entity id="tree" shadow="cast: true; receive: true" position="-3 -2.6 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
@@ -54,52 +54,52 @@
         <a-entity id="obstacles-container" obstacle-despawn>
             <!-- Top -->
             <a-entity class="obstacle" id="top-obstacle" position="0 2.1 0" animation="property: position; from: 0 2.1 -70; to: 0 2.1 70; dur: 9000; easing: linear">
-                <a-box shadow="cast: true" height="1.8" width="3" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" render-order></a-box>
+                <a-box shadow="cast: true" height="1.8" width="3" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.y; from: 5; to: 0; easing: easeInOutElastic; dur: 1500" render-order></a-box>
             </a-entity>
 
             <!-- Right -->
             <a-entity class="obstacle" id="right-obstacle" position="0.75 1.5 0" animation="property: position; from: 0.75 1.5 -70; to: 0.75 1.5 70; dur: 9000; easing: linear">
-                <a-box shadow="cast: true" height="3" width="1.5" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
+                <a-box shadow="cast: true" height="3" width="1.5" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.x; from: 5; to: 0; easing: easeInOutElastic; dur: 1500" render-order></a-box>
             </a-entity>
 
             <!-- Left -->
             <a-entity class="obstacle" id="left-obstacle" position="-0.75 1.5 0" animation="property: position; from: -0.75 1.5 -70; to: -0.75 1.5 70; dur: 9000; easing: linear">
-                <a-box shadow="cast: true" height="3" width="1.5" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
+                <a-box shadow="cast: true" height="3" width="1.5" depth="5" material="shader: wallShader; colorTertiary: #637EDB; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.x; from: -5; to: 0; easing: easeInOutElastic; dur: 1500" render-order></a-box>
             </a-entity>
 
             <!-- Wide-Right -->
             <a-entity class="obstacle" id="wide-right-obstacle" position="0.5 1.5 0" animation="property: position; from: 0.5 1.5 -70; to: 0.5 1.5 70; dur: 9000; easing: linear">
-                <a-box shadow="cast: true" height="3" width="2" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
+                <a-box shadow="cast: true" height="3" width="2" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.x; from: 5; to: 0; easing: easeInOutElastic; dur: 1500" render-order></a-box>
             </a-entity>
 
             <!-- Wide-Left -->
             <a-entity class="obstacle" id="wide-left-obstacle" position="-0.5 1.5 0" animation="property: position; from: -0.5 1.5 -70; to: -0.5 1.5 70; dur: 9000; easing: linear">
-                <a-box shadow="cast: true" height="3" width="2" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
+                <a-box shadow="cast: true" height="3" width="2" depth="5" material="shader: wallShader; colorTertiary: #637EDB; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.x; from: -5; to: 0; easing: easeInOutElastic; dur: 1500" render-order></a-box>
             </a-entity>
 
             <!-- Middle -->
             <a-entity class="obstacle" id="middle-obstacle" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear">
-                <a-box shadow="cast: true" height="3" width="1" depth="5" position="1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
-                <a-box shadow="cast: true" height="3" width="1" depth="5" position="-1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
+                <a-box shadow="cast: true" height="3" width="1" depth="5" position="1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.x; from: 5; to: 1; easing: easeInOutElastic; dur: 1500" render-order></a-box>
+                <a-box shadow="cast: true" height="3" width="1" depth="5" position="-1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.x; from: -5; to: -1; easing: easeInOutElastic; dur: 1500" render-order></a-box>
             </a-entity>
 
             <!-- Top-Left -->
-            <a-entity class="obstacle" id="top-left-obstacle" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear">
-                <a-box shadow="cast: true" height="3" width="1.5" depth="5" position="-0.75 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
-                <a-box shadow="cast: true" height="1.8" width="3" depth="5" position="0 2.1 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
+            <a-entity class="obstacle" id="top-left-obstacle" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear" >
+                <a-box shadow="cast: true" height="3" width="1.5" depth="5" position="-0.75 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.x; from: -5; to: -0.75; easing: easeInOutElastic; dur: 1500" render-order></a-box>
+                <a-box shadow="cast: true" height="1.8" width="3" depth="5" position="0 2.1 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.y; from: 5; to: 2.1; easing: easeInOutElastic; dur: 1500" render-order></a-box>
             </a-entity>
 
             <!-- Top-Right -->
             <a-entity class="obstacle" id="top-right-obstacle" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear">
-                <a-box shadow="cast: true" height="3" width="1.5" depth="5" position="0.75 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
-                <a-box shadow="cast: true" height="1.8" width="3" depth="5" position="0 2.1 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
+                <a-box shadow="cast: true" height="3" width="1.5" depth="5" position="0.75 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.x; from: 5; to: 0.75; easing: easeInOutElastic; dur: 1500" render-order></a-box>
+                <a-box shadow="cast: true" height="1.8" width="3" depth="5" position="0 2.1 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.y; from: 5; to: 2.1; easing: easeInOutElastic; dur: 1500" render-order></a-box>
             </a-entity>
 
             <!-- Top-Middle -->
             <a-entity class="obstacle" id="top-middle-obstacle" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear">
-                <a-box shadow="cast: true" height="1.8" width="3" depth="5" position="0 2.1 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
-                <a-box shadow="cast: true" height="3" width="1" depth="5" position="1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
-                <a-box shadow="cast: true" height="3" width="1" depth="5" position="-1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
+                <a-box shadow="cast: true" height="1.8" width="3" depth="5" position="0 2.1 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.y; from: 5; to: 2.1; easing: easeInOutElastic; dur: 1500" render-order></a-box>
+                <a-box shadow="cast: true" height="3" width="1" depth="5" position="1 1.5 0" material="shader: wallShader; acolorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.x; from: 5; to: 1; easing: easeInOutElastic; dur: 1500" render-order></a-box>
+                <a-box shadow="cast: true" height="3" width="1" depth="5" position="-1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.x; from: -5; to: -1; easing: easeInOutElastic; dur: 1500" render-order></a-box>
             </a-entity>
         </a-entity>
 
