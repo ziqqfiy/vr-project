@@ -24,7 +24,7 @@
         </a-assets>
 
         <!-- Player -->
-        <a-entity id="cameraRig">
+        <a-entity id="cameraRig" cameraRig>
             <a-entity id="camera" bind__wasd-controls="enabled: !inVr" position="0 1.6 0" camera="far: 10000" look-controls player-height wasd-controls="acceleration: 15"></a-entity>
             <a-entity id="cameraWallCollider" bind__raycaster__wall="enabled: isPlaying && gameMode !== 'ride'" proxy-event__wallhitstart="event: raycaster-intersection; to: a-scene; as: wallhitstart" proxy-event__wallhitend="event: raycaster-intersection-cleared; to: a-scene; as: wallhitend" follow-position="target: #camera" raycaster__wall="objects: [data-wall-active]; interval: 150; direction: 0 -1 0; far: 5" visible="false"></a-entity>
         </a-entity>
@@ -43,60 +43,63 @@
         <!-- moVRin -->
         <a-entity id="title" text-geometry="value: moVRin; font: #montserrat; size: 5 height: 0.1; bevelEnabled: true; bevelSize: 0; bevelThickness: 1" position="-15 20 -35" rotation="25 0 0" material="fog: false; color: #A0CEEA"></a-entity>
        
+        <!-- Score -->
+        <a-entity id="score" shadow="cast: true; receive: true" text-geometry="value: ; font: #montserrat; size: 5 height: 0.1; bevelEnabled: true; bevelSize: 0; bevelThickness: 1" position="6 -4.5 -20.5" rotation="0 -18 0" material="fog: false; color: #FDCEBA"></a-entity>
+       
         <!-- Tree -->
-        <a-entity id="tree" position="-3 -2.6 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
-        <a-entity id="tree" position="3 -2.6 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+        <a-entity id="tree" shadow="cast: true; receive: true" position="-3 -2.6 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+        <a-entity id="tree" shadow="cast: true; receive: true" position="3 -2.6 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
         
         <!-- Obstacles -->
-        <a-entity id="obstacles-container">
+        <a-entity id="obstacles-container" obstacle-despawn>
             <!-- Top -->
-            <a-entity class="obstacle" id="top-obstacle" position="0 2.1 0">
-                <a-box shadow="cast: true" height="1.8" width="3" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear" render-order></a-box>
+            <a-entity class="obstacle" id="top-obstacle" position="0 2.1 0" animation="property: position; from: 0 2.1 -70; to: 0 2.1 70; dur: 9000; easing: linear">
+                <a-box shadow="cast: true" height="1.8" width="3" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" render-order></a-box>
             </a-entity>
 
             <!-- Right -->
-            <a-entity class="obstacle" id="right-obstacle" position="0.75 1.5 0">
-                <a-box shadow="cast: true" height="3" width="1.5" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear"></a-box>
+            <a-entity class="obstacle" id="right-obstacle" position="0.75 1.5 0" animation="property: position; from: 0.75 1.5 -70; to: 0.75 1.5 70; dur: 9000; easing: linear">
+                <a-box shadow="cast: true" height="3" width="1.5" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
             </a-entity>
 
             <!-- Left -->
-            <a-entity class="obstacle" id="left-obstacle" position="-0.75 1.5 0">
-                <a-box shadow="cast: true" height="3" width="1.5" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear"></a-box>
+            <a-entity class="obstacle" id="left-obstacle" position="-0.75 1.5 0" animation="property: position; from: -0.75 1.5 -70; to: -0.75 1.5 70; dur: 9000; easing: linear">
+                <a-box shadow="cast: true" height="3" width="1.5" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
             </a-entity>
 
             <!-- Wide-Right -->
-            <a-entity class="obstacle" id="wide-right-obstacle" position="0.5 1.5 0">
-                <a-box shadow="cast: true" height="3" width="2" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear"></a-box>
+            <a-entity class="obstacle" id="wide-right-obstacle" position="0.5 1.5 0" animation="property: position; from: 0.5 1.5 -70; to: 0.5 1.5 70; dur: 9000; easing: linear">
+                <a-box shadow="cast: true" height="3" width="2" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
             </a-entity>
 
             <!-- Wide-Left -->
-            <a-entity class="obstacle" id="wide-left-obstacle" position="-0.5 1.5 0">
-                <a-box shadow="cast: true" height="3" width="2" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear"></a-box>
+            <a-entity class="obstacle" id="wide-left-obstacle" position="-0.5 1.5 0" animation="property: position; from: -0.5 1.5 -70; to: -0.5 1.5 70; dur: 9000; easing: linear">
+                <a-box shadow="cast: true" height="3" width="2" depth="5" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
             </a-entity>
 
             <!-- Middle -->
-            <a-entity class="obstacle" id="middle-obstacle">
-                <a-box shadow="cast: true" height="3" width="1" depth="5" position="1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation="property: position; from: 1 1.5 -70; to: 1 1.5 70; dur: 9000; easing: linear"></a-box>
-                <a-box shadow="cast: true" height="3" width="1" depth="5" position="-1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation="property: position; from: -1 1.5 -70; to: -1 1.5 70; dur: 9000; easing: linear"></a-box>
+            <a-entity class="obstacle" id="middle-obstacle" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear">
+                <a-box shadow="cast: true" height="3" width="1" depth="5" position="1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
+                <a-box shadow="cast: true" height="3" width="1" depth="5" position="-1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
             </a-entity>
 
             <!-- Top-Left -->
-            <a-entity class="obstacle" id="top-left-obstacle">
-                <a-box shadow="cast: true" height="3" width="1.5" depth="5" position="-0.75 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation="property: position; from: -0.75 1.5 -70; to: -0.75 1.5 70; dur: 9000; easing: linear"></a-box>
-                <a-box shadow="cast: true" height="1.8" width="3" depth="5" position="0 2.1 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation="property: position; from: 0 2.1 -70; to: 0 2.1 70; dur: 9000; easing: linear"></a-box>
+            <a-entity class="obstacle" id="top-left-obstacle" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear">
+                <a-box shadow="cast: true" height="3" width="1.5" depth="5" position="-0.75 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
+                <a-box shadow="cast: true" height="1.8" width="3" depth="5" position="0 2.1 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
             </a-entity>
 
             <!-- Top-Right -->
-            <a-entity class="obstacle" id="top-right-obstacle">
-                <a-box shadow="cast: true" height="3" width="1.5" depth="5" position="0.75 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation="property: position; from: 0.75 1.5 -70; to: 0.75 1.5 70; dur: 9000; easing: linear"></a-box>
-                <a-box shadow="cast: true" height="1.8" width="3" depth="5" position="0 2.1 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation="property: position; from: 0 2.1 -70; to: 0 2.1 70; dur: 9000; easing: linear"></a-box>
+            <a-entity class="obstacle" id="top-right-obstacle" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear">
+                <a-box shadow="cast: true" height="3" width="1.5" depth="5" position="0.75 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
+                <a-box shadow="cast: true" height="1.8" width="3" depth="5" position="0 2.1 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
             </a-entity>
 
             <!-- Top-Middle -->
-            <a-entity class="obstacle" id="top-middle-obstacle">
-                <a-box shadow="cast: true" height="1.8" width="3" depth="5" position="0 2.1 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation="property: position; from: 0 2.1 -70; to: 0 2.1 70; dur: 9000; easing: linear"></a-box>
-                <a-box shadow="cast: true" height="3" width="1" depth="5" position="1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation="property: position; from: 1 1.5 -70; to: 1 1.5 70; dur: 9000; easing: linear"></a-box>
-                <a-box shadow="cast: true" height="3" width="1" depth="5" position="-1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation="property: position; from: -1 1.5 -70; to: -1 1.5 70; dur: 9000; easing: linear"></a-box>
+            <a-entity class="obstacle" id="top-middle-obstacle" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear">
+                <a-box shadow="cast: true" height="1.8" width="3" depth="5" position="0 2.1 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
+                <a-box shadow="cast: true" height="3" width="1" depth="5" position="1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
+                <a-box shadow="cast: true" height="3" width="1" depth="5" position="-1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1"></a-box>
             </a-entity>
         </a-entity>
 

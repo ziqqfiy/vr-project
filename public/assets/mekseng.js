@@ -3,7 +3,7 @@
  *********/
 AFRAME.registerShader('wallShader', {
     schema: {
-        colorTertiary: { type: 'color', is: 'uniform', default: 'yellow'},
+        colorTertiary: { type: 'color', is: 'uniform', default: 'yellow' },
         environment: { type: 'map', is: 'uniform', default: 'assets/envmap.png' },
         hitLeft: { type: 'vec3', is: 'uniform', default: { x: 0, y: 9000, z: 0 } },
         hitRight: { type: 'vec3', is: 'uniform', default: { x: 0, y: 9000, z: 0 } },
@@ -133,6 +133,10 @@ function addObstaclesRandomlyLoop({ intervalLength = 700 } = {}) {
     obstacleTimer = setInterval(addObstaclesRandomly, intervalLength);
 }
 
+function despawnObstaclesLoop({ intervalLength = 700 } = {}) {
+    obstacleTimer = setInterval(despawnObstacles, intervalLength);
+}
+
 function removeObstacles(obstacle) {
     obstacle.parentNode.removeChild(obstacle);
 }
@@ -185,34 +189,54 @@ function addObstaclesRandomly({
     return numberOfObstaclesAdded;
 }
 
+AFRAME.registerComponent('obstacle-despawn', {
+    tick: function () {
+        document.querySelectorAll('.obstacle').forEach(function (obstacle) {
+            position = obstacle.getAttribute('position');
+            if (position.z > 20) {
+                removeObstacles(obstacle);
+            }
+        })
+    }
+});
+
 /**************
  * COLLISIONS *
  **************/
 
-const POSITION_Z_OUT_OF_SIGHT = 1;
-const POSITION_Z_LINE_START = 0.6;
-const POSITION_Z_LINE_END = 0.7;
+/*********
+ * SCORE *
+ *********/
 
-function setupCollisions() {
-    AFRAME.registerComponent('player', {
-        tick: function () {
-            document.querySelectorAll('.obstacle').forEach(function (obstacle) {
-                position = obstacle.getAttribute('position');
-                obstacle_id = obstacle.getAttribute('id');
+var score;
+var countedObstacle;
+var scoreDisplay;
 
-                if (position.z > POSITION_Z_OUT_OF_SIGHT) {
-                    removeObstacles(obstacle);
-                }
+function setupScore() {
+    score = 0;
+    countedObstacle = new Set();
+    scoreDisplay = document.getElementById('score');
+}
 
-                if (!isGameRunning) return;
-            })
-        }
-    })
+function teardownScore() {
+    scoreDisplay.setAttribute('value', '');
+}
+
+function addScoreForObstacle(obstacle_id) {
+    if (countedObstacle.has(obstacle_id)) return;
+    score += 1;
+    countedObstacle.add(obstacle_id);
+}
+
+function updateScoreDisplay() {
+    scoreDisplay.setAttribute('value', score);
 }
 
 /********
  * Gradient Sky *
  ********/
+
+
 
 /********
  * GAME *
@@ -220,9 +244,8 @@ function setupCollisions() {
 
 var isGameRunning = false;
 
-setupCollisions()
-
 window.onload = function () {
+    setupScore();
     setupObstacles();
     startGame();
 }
@@ -230,7 +253,8 @@ window.onload = function () {
 function startGame() {
     if (isGameRunning) return;
     isGameRunning = true;
-
+    setupScore();
+    updateScoreDisplay();
     addObstaclesRandomlyLoop();
 }
 
@@ -239,6 +263,7 @@ function gameOver() {
 
     alert('Game Over!');
     teardownObstacles();
+    teardownScore();
 }
 
 /*************
