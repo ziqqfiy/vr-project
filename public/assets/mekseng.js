@@ -240,10 +240,42 @@ function updateScoreDisplay() {
 }
 
 /********
- * Gradient Sky *
+ * MENU *
  ********/
 
+var menuStart;
+var menuContainer;
+var isGameRunning = false;
+var startButton;
 
+function hideEntity(el) {
+    el.setAttribute('visible', false);
+}
+
+function showEntity(el) {
+    el.setAttribute('visible', true);
+}
+
+function setupAllMenus() {
+    menuStart = document.getElementById('start-menu');
+    menuContainer = document.getElementById('menu-container');
+    startButton = document.getElementById('start-button');
+
+    startButton.addEventListener('click', startGame);
+
+    showStartMenu();
+}
+
+function hideAllMenus() {
+    hideEntity(menuContainer);
+    startButton.classList.remove('clickable');
+}
+
+function showStartMenu() {
+    showEntity(menuContainer);
+    showEntity(menuStart);
+    startButton.classList.add('clickable');
+}
 
 /********
  * GAME *
@@ -252,9 +284,9 @@ function updateScoreDisplay() {
 var isGameRunning = false;
 
 window.onload = function () {
+    setupAllMenus()
     setupScore();
     setupObstacles();
-    startGame();
 }
 
 function gameOver() {
@@ -263,6 +295,7 @@ function gameOver() {
     alert('Game Over!');
     teardownObstacles();
     teardownScore();
+    showGameOverMenu();
 }
 
 function startGame() {
@@ -271,6 +304,7 @@ function startGame() {
     setupScore();
     updateScoreDisplay();
     addObstaclesRandomlyLoop();
+    hideAllMenus();
 }
 
 /*************

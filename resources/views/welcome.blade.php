@@ -21,7 +21,16 @@
             <audio id="bgm" src="assets/bg_music.mp3"></audio>
             <a-asset-item id="tree-obj" src="assets/lowpolytree.obj"></a-asset-item>
             <a-asset-item id="tree-mtl" src="assets/lowpolytree.mtl"></a-asset-item>
+            <a-mixin id="title" text="font:exo2bold; height:10; width:10; anchor:center; align:center;"></a-mixin>
         </a-assets>
+
+        <!-- Menus -->
+        <a-entity id="menu-container">
+            <a-entity id="start-menu" position="0 1.1 -3">
+                <a-text value="Start" position="0 0.75 0" mixin="title"></a-text>
+                <a-box id="start-button" color="#A0CEEA" position="0 0.65 -0.05" width="1.5" height="0.6" depth="0.1"></a-box>
+            </a-entity>
+        </a-entity>
 
         <!-- Player -->
         <a-entity id="cameraRig" cameraRig>
@@ -42,14 +51,14 @@
 
         <!-- moVRin -->
         <a-entity id="title" text-geometry="value: moVRin; font: #montserrat; size: 5 height: 0.1; bevelEnabled: true; bevelSize: 0; bevelThickness: 1" position="-15 20 -35" rotation="25 0 0" material="fog: false; color: #A0CEEA"></a-entity>
-       
+
         <!-- Score -->
-        <a-entity id="score" shadow="cast: true; receive: true" text-geometry="value: ?; font: #montserrat; size: 5 height: 0.1; bevelEnabled: true; bevelSize: 0; bevelThickness: 1" position="6 -4.4 -20.5" rotation="0 -18 0" material="fog: false; color: #FDCEBA"></a-entity>
-       
+        <a-entity id="score" shadow="cast: true; receive: true" text-geometry="value: 0; font: #montserrat; size: 5 height: 0.1; bevelEnabled: true; bevelSize: 0; bevelThickness: 1" position="6 -4.4 -20.5" rotation="0 -18 0" material="fog: false; color: #FDCEBA"></a-entity>
+
         <!-- Tree -->
         <a-entity id="tree" shadow="cast: true; receive: true" position="-3 -2.6 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
         <a-entity id="tree" shadow="cast: true; receive: true" position="3 -2.6 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
-        
+
         <!-- Obstacles -->
         <a-entity id="obstacles-container" obstacle-despawn>
             <!-- Top -->
@@ -84,7 +93,7 @@
             </a-entity>
 
             <!-- Top-Left -->
-            <a-entity class="obstacle" id="top-left-obstacle" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear" >
+            <a-entity class="obstacle" id="top-left-obstacle" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear">
                 <a-box shadow="cast: true" height="3" width="1.5" depth="5" position="-0.75 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.x; from: -5; to: -0.75; easing: easeInOutElastic; dur: 1500" render-order></a-box>
                 <a-box shadow="cast: true" height="1.8" width="3" depth="5" position="0 2.1 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.y; from: 5; to: 2.1; easing: easeInOutElastic; dur: 1500" render-order></a-box>
             </a-entity>
