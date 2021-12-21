@@ -5,8 +5,8 @@ AFRAME.registerShader('wallShader', {
     schema: {
         colorTertiary: { type: 'color', is: 'uniform', default: 'yellow' },
         environment: { type: 'map', is: 'uniform', default: 'assets/envmap.png' },
-        hitLeft: { type: 'vec3', is: 'uniform', default: { x: 0, y: 9000, z: 0 } },
-        hitRight: { type: 'vec3', is: 'uniform', default: { x: 0, y: 9000, z: 0 } },
+        hitLeft: { type: 'vec3', is: 'uniform', default: { x: 0, y: 9000, z: 20 } },
+        hitRight: { type: 'vec3', is: 'uniform', default: { x: 0, y: 9000, z: 20 } },
         iTime: { type: 'time', is: 'uniform' },
         opacity: { type: 'number', is: 'uniform' },
     },
@@ -198,7 +198,7 @@ AFRAME.registerComponent('obstacle-despawn', {
                 removeObstacles(obstacle);
             }
 
-            if (position.z > 1) {
+            if (position.z > 4) {
                 addScore(obstacle_id);
                 updateScoreDisplay();
             }

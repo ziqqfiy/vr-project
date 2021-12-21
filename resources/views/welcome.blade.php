@@ -60,8 +60,72 @@
         <a-entity id="score" shadow="cast: true; receive: true" text-geometry="value: 0; font: #montserrat; size: 5 height: 0.1; bevelEnabled: true; bevelSize: 0; bevelThickness: 1" position="6 -4.4 -20.5" rotation="0 -18 0" material="fog: false; color: #FDCEBA"></a-entity>
 
         <!-- Tree -->
-        <a-entity id="tree" shadow="cast: true; receive: true" position="-3 -2.6 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
-        <a-entity id="tree" shadow="cast: true; receive: true" position="3 -2.6 0" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+        <a-entity id="trees-container">
+            <a-entity id="left-trees-group">
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-4.588 -0.700 -65.213" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-8.507 -0.7 -58.654" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-5.363 -0.7 -52.531" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-7.437 -0.7 -46.778" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-4.874 -0.7 -41.261" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-6.670 -0.7 -34.806" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-4.141 -0.7 -29.387" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-7.411 -0.7 -24.295" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-14.092 -0.7 -21.100" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-20.319 -0.7 -15.164" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-12.382 -0.7 -28.780" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-20.456 -0.7 -21.262" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-18.112 -0.7 -31.711" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-12.709 -0.7 -37.613" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-14.092 -0.7 -45.122" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-18.951 -0.7 -38.267" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-25.527 -0.7 -34.291" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-23.170 -0.7 -27.600" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-27.837 -0.7 -17.997" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-27.727 -0.7 -10.214" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-20.814 -0.7 -9.950" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-13.533 -0.7 -8.818" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-11.082 -0.7 -2.579" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-5.442 -0.7 -0.036" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-28.064 -0.7 -23.994" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-17.638 -0.7 -3.508" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-23.757 -0.7 -4.113" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-10.894 -0.7 4.677" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-4.408 -0.7 6.166" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="-35.001 -0.7 -23.742" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+            </a-entity>
+            <a-entity id="right-trees-group">
+                <a-entity id="tree" shadow="cast: true; receive: true" position="4.588 -0.700 -65.213" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="8.507 -0.7 -58.654" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="5.363 -0.7 -52.531" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="7.437 -0.7 -46.778" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="4.874 -0.7 -41.261" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="6.670 -0.7 -34.806" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="4.141 -0.7 -29.387" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="7.411 -0.7 -24.295" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="14.092 -0.7 -21.100" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="20.319 -0.7 -15.164" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="12.382 -0.7 -28.780" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="20.456 -0.7 -21.262" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="18.112 -0.7 -31.711" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="12.709 -0.7 -37.613" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="14.092 -0.7 -45.122" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="18.951 -0.7 -38.267" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="25.527 -0.7 -34.291" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="23.170 -0.7 -27.600" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="27.837 -0.7 -17.997" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="27.727 -0.7 -10.214" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="20.814 -0.7 -9.950" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="13.533 -0.7 -8.818" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="11.082 -0.7 -2.579" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="5.442 -0.7 -0.036" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="28.064 -0.7 -23.994" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="17.638 -0.7 -3.508" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="23.757 -0.7 -4.113" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="10.894 -0.7 4.677" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="4.408 -0.7 6.166" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+                <a-entity id="tree" shadow="cast: true; receive: true" position="35.001 -0.7 -23.742" scale="2 2 2" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+            </a-entity>
+        </a-entity>
 
         <!-- Obstacles -->
         <a-entity id="obstacles-container" obstacle-despawn>
