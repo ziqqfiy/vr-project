@@ -24,30 +24,34 @@
             <a-mixin id="title" text="font:exo2bold; height:10; width:10; anchor:center; align:center;"></a-mixin>
         </a-assets>
 
+        <!-- Cursor -->
+        <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #start-button; useWorldCoordinates: true"></a-entity>
+
+        <!-- Oculus Touch -->
+        <a-entity id="left-controller" laser-controls="hand: left" raycaster="objects: #start-button;"></a-entity>
+        <a-entity id="right-controller" laser-controls="hand: right" raycaster="objects: #start-button;"></a-entity>
+
         <!-- Menus -->
         <a-entity id="menu-container">
             <a-entity id="start-menu" position="0 1.1 -3">
-                <a-text value="Start" position="0 0.75 0" mixin="title"></a-text>
-                <a-box id="start-button" color="#A0CEEA" position="0 0.65 -0.05" width="1.5" height="0.6" depth="0.1"></a-box>
+                <a-entity id="start-button" geometry="primitive: box; width: 1.5; height: 0.6; depth: 0.1" material="color: #A0CEEA" position="0 0.65 -0.05" animation__mouseenter="property: scale; startEvents: mouseenter; easing: easeOutCubic; dur: 150; from: 1 1 1; to: 1.2 1.2 1.2" animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeOutCubic; dur: 500; from: 1.2 1.2 1.2; to: 1 1 1">
+                    <a-text value="Start" position="0 0.08 0.05" mixin="title"></a-text>
+                </a-entity>
             </a-entity>
         </a-entity>
 
         <!-- Player -->
-        <a-entity id="cameraRig" cameraRig>
-            <a-entity id="camera" bind__wasd-controls="enabled: !inVr" position="0 1.6 0" camera="far: 10000" look-controls player-height wasd-controls="acceleration: 15"></a-entity>
-            <a-entity id="cameraWallCollider" bind__raycaster__wall="enabled: isPlaying && gameMode !== 'ride'" proxy-event__wallhitstart="event: raycaster-intersection; to: a-scene; as: wallhitstart" proxy-event__wallhitend="event: raycaster-intersection-cleared; to: a-scene; as: wallhitend" follow-position="target: #camera" raycaster__wall="objects: [data-wall-active]; interval: 150; direction: 0 -1 0; far: 5" visible="false"></a-entity>
+        <a-entity id="cameraRig" collider-check raycaster="objects: #start-button">
+            <a-entity id="camera" bind__wasd-controls="enabled: !inVr" position="0 1.6 0" camera="far: 10000" look-controls player-height wasd-controls="acceleration: 15">
+            </a-entity>
         </a-entity>
 
-        <!-- Oculus Touch -->
-        <a-entity id="left-controller" oculus-touch-controls="hand: left; controllerType: oculus-touch-v3"></a-entity>
-        <a-entity id="right-controller" oculus-touch-controls="hand: right; controllerType: oculus-touch-v3"></a-entity>
+        <!-- Sound -->
+        <a-entity id="sound" sound="src: #bgm; autoplay: true; loop: true; volume: 1"></a-entity>
 
         <!-- Lights -->
         <a-entity id="sunlight" light="type:directional; castShadow:true; intensity: 0.45; color: #fede86; distance: 50; shadowCameraRight: 20; shadowCameraTop: 20; shadowCameraLeft: -20; shadowRadius: 5" position="3.755 4.082 5.158"></a-entity>
         <a-light id="ambient" intensity="0.8" type="ambient" color="white"></a-light>
-
-        <!-- Sound -->
-        <a-entity id="sound" sound="src: #bgm; autoplay: true; loop: true; volume: 1"></a-entity>
 
         <!-- moVRin -->
         <a-entity id="title" text-geometry="value: moVRin; font: #montserrat; size: 5 height: 0.1; bevelEnabled: true; bevelSize: 0; bevelThickness: 1" position="-15 20 -35" rotation="25 0 0" material="fog: false; color: #A0CEEA"></a-entity>
@@ -107,7 +111,7 @@
             <!-- Top-Middle -->
             <a-entity class="obstacle" id="top-middle-obstacle" animation="property: position; from: 0 0 -70; to: 0 0 70; dur: 9000; easing: linear">
                 <a-box shadow="cast: true" height="1.8" width="3" depth="5" position="0 2.1 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.y; from: 5; to: 2.1; easing: easeInOutElastic; dur: 1500" render-order></a-box>
-                <a-box shadow="cast: true" height="3" width="1" depth="5" position="1 1.5 0" material="shader: wallShader; acolorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.x; from: 5; to: 1; easing: easeInOutElastic; dur: 1500" render-order></a-box>
+                <a-box shadow="cast: true" height="3" width="1" depth="5" position="1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.x; from: 5; to: 1; easing: easeInOutElastic; dur: 1500" render-order></a-box>
                 <a-box shadow="cast: true" height="3" width="1" depth="5" position="-1 1.5 0" material="shader: wallShader; colorTertiary: #fede86; transparent: true; side: double; opacity: 1" animation__fadein="property: components.material.material.uniforms.opacity.value; from: 0; to: 1; easing: easeInCubic; dur: 1500" animation__scalein="property: object3D.position.x; from: -5; to: -1; easing: easeInOutElastic; dur: 1500" render-order></a-box>
             </a-entity>
         </a-entity>
@@ -115,14 +119,14 @@
         <!-- Floor -->
         <a-box id="floor" shadow="receive: true" depth="150" width="150" height="1" color="#A3D1EE" position="0 -5 0"></a-box>
 
-        <!-- Sun -->
-        <a-sphere id="sun" color="#fede86" position="9.283 10.557 14.033" scale="5 5 5" material="emissive: #fede86; emissiveIntensity: 1"></a-sphere>
-
         <!-- PLatform -->
         <a-box id="platform" shadow="cast: true" position="0 -0.3 0" width="3" depth="3" height="0.5" color="#FDCEBA"></a-box>
 
         <!-- Pathway -->
         <a-box id="pathway" shadow="cast: true" position="0 -0.3 -40" width="3" depth="60" height="0.5" color="#FDCEBA"></a-box>
+
+        <!-- Sun -->
+        <a-sphere id="sun" color="#fede86" position="9.283 10.557 14.033" scale="5 5 5" material="emissive: #fede86; emissiveIntensity: 1"></a-sphere>
 
         <!-- Sky -->
         <a-sky id="sky" color="#665A8A"></a-sky>
