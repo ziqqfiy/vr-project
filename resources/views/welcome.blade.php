@@ -50,7 +50,7 @@
         <a-entity id="sound" sound="src: #bgm; autoplay: true; loop: true; volume: 1"></a-entity>
 
         <!-- Lights -->
-        <a-entity id="sunlight" light="type:directional; castShadow:true; intensity: 0.45; color: #fede86; distance: 50; shadowCameraRight: 20; shadowCameraTop: 20; shadowCameraLeft: -20; shadowRadius: 5" position="3.755 4.082 5.158"></a-entity>
+        <a-entity id="sunlight" light="type:directional; castShadow:true; intensity: 0.45; color: #fede86; distance: 50; shadowCameraBottom: -10; shadowCameraRight: 46; shadowCameraTop: 20; shadowCameraLeft: -20; shadowRadius: 5" position="3.755 4.082 5.158"></a-entity>
         <a-light id="ambient" intensity="0.8" type="ambient" color="white"></a-light>
 
         <!-- moVRin -->
