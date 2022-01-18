@@ -1,49 +1,87 @@
 @extends('auth.layout')
-
 @section('content')
 
-<form class="mt-5" action="{{ route('register-store') }}" method="POST">
-    @csrf
+<!doctype html>
+<html>
 
-    @if( $errors->any() )
-    <p class="alert alert-danger">Please check your input</p>
-    @endif
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
+</head>
 
-    <h4>Registration</h4>
+<body class="bg-purple-50 flex flex-wrap items-center justify-center min-h-screen">
+    <div class="flex place-items-center">
+        <div class="w-1/2">
+            <h1 class="font-montserrat text-8xl text-center font-black text-purple-400 ">
+                moVRin
+            </h1>
+        </div>
+        <div class="w-1/2 ">
+            <div class="shadow-2xl shadow-purple-500/20 bg-white rounded-3xl p-8 max-w-md self-center">
+                <h1 class="font-montserrat text-3xl text-purple-400 font-normal text-center">
+                    Sign up
+                </h1>
+                <h1 class="font-montserrat text-5xl text-purple-400 font-extrabold text-center mt-6">
+                    Hey There!
+                </h1>
+                <h3 class=" font-montserrat text-xl text-purple-400 font-medium text-center">
+                    Welcome aboard!
+                </h3>
 
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email</label>
-        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{old('email')}}">
-        @error('email')
-        <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+                <form class="mt-16" action="{{ route('register-store') }}" method="POST">
+                    @csrf
+
+                    @if( $errors->any() )
+                    <p class="alert alert-danger rounded-full">Ops! Something's not quite right :(</p>
+                    @endif
+
+                    <div>
+                        <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-400 -mb-8">Email</label>
+                        <input id="email-address" name="email" type="email" autocomplete="email" required class=" appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('email') is-invalid @enderror mb-3" value="{{old('email')}}" placeholder="movrin@gmail.com">
+                        @error('email')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div>
+                        <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-400 -mb-8">Username</label>
+                        <input id="username" name="name" autocomplete="email" required class=" appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('name') is-invalid @enderror mb-3" value="{{old('name')}}" placeholder="movrin">
+                        @error('name')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div>
+                        <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-400 -mb-8">Password</label>
+                        <input id="password" name="password" type="password" autocomplete="current-password" required class="rounded-full font-montserrat relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10  sm:text-sm @error('password') is-invalid @enderror mb-3" placeholder="********">
+                        @error('password')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div>
+                        <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-400 -mb-8">Confirm Password</label>
+                        <input id="password_confirmation" name="password_confirmation" type="password" autocomplete="current-password" required class="rounded-full font-montserrat relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10  sm:text-sm @error('password_confirmation') is-invalid @enderror mb-16" placeholder="********">
+                        @error('password_confirmation')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <p class="font-montserrat font-normal text-center">
+                        Already have an account? <a href="{{ route('login') }}" class=" text-purple-400 ">Log in</a>
+                    </p>
+
+                    <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-purple-400 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                        Sign up
+                    </button>
+
+                </form>
+            </div>
+        </div>
     </div>
+</body>
 
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Username</label>
-        <input type="name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{old('name')}}">
-        @error('name')
-        <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Password</label>
-        <input type="password" class="form-control @error('password') is-invalid @enderror" name="password">
-        @error('password')
-        <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Confirm Password</label>
-        <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation">
-        @error('password_confirmation')
-        <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-
-    <button type="submit" class="btn btn-primary">Register</button>
-</form>
-
+</html>
 @endsection

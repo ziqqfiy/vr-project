@@ -1,5 +1,4 @@
 @extends('auth.layout')
-
 @section('content')
 <!doctype html>
 <html>
@@ -34,12 +33,12 @@
                     @csrf
 
                     @if( session('error') )
-                    <p class="alert alert-danger">{{ session('error') }}</p>
+                    <p class="alert alert-danger rounded-full">{{ session('error') }}</p>
                     @endif
 
                     <div>
                         <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-400 -mb-8">Email</label>
-                        <input id="email-address" name="email" type="email" autocomplete="email" required class=" appearance-none rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('email') is-invalid @enderror mb-3" name="email" value="{{old('email')}}" placeholder="movrin@gmail.com">
+                        <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('email') is-invalid @enderror mb-3" name="email" value="{{old('email')}}" placeholder="movrin@gmail.com">
                         @error('email')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -47,7 +46,7 @@
 
                     <div>
                         <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-400 -mb-8">Password</label>
-                        <input id="password" name="password" type="password" autocomplete="current-password" required class="rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10  sm:text-sm @error('password') is-invalid @enderror mb-16" name="password" placeholder="********">
+                        <input id="password" name="password" type="password" autocomplete="current-password" required class="rounded-full font-montserrat relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10  sm:text-sm @error('password') is-invalid @enderror mb-16" name="password" placeholder="********">
                         @error('password')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror

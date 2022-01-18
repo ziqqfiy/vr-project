@@ -786,6 +786,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-grayscale: grayscale(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
+.selection\:rounded-full *::-moz-selection {
+  border-radius: 9999px;
+}
+.selection\:rounded-full *::selection {
+  border-radius: 9999px;
+}
+.selection\:rounded-full::-moz-selection {
+  border-radius: 9999px;
+}
+.selection\:rounded-full::selection {
+  border-radius: 9999px;
+}
+.file\:rounded-full::-webkit-file-upload-button {
+  border-radius: 9999px;
+}
+.file\:rounded-full::file-selector-button {
+  border-radius: 9999px;
+}
 .hover\:border-purple-700:hover {
   --tw-border-opacity: 1;
   border-color: rgb(126 34 206 / var(--tw-border-opacity));
