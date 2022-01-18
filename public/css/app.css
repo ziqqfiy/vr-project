@@ -518,6 +518,24 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-5 {
   margin-top: 1.25rem;
 }
+.-mt-6 {
+  margin-top: -1.5rem;
+}
+.-mb-6 {
+  margin-bottom: -1.5rem;
+}
+.-mb-10 {
+  margin-bottom: -2.5rem;
+}
+.-mb-16 {
+  margin-bottom: -4rem;
+}
+.-mb-14 {
+  margin-bottom: -3.5rem;
+}
+.mt-10 {
+  margin-top: 2.5rem;
+}
 .block {
   display: block;
 }
@@ -539,6 +557,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-16 {
   height: 4rem;
 }
+.h-14 {
+  height: 3.5rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -557,11 +578,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-full {
   width: 100%;
 }
+.w-14 {
+  width: 3.5rem;
+}
+.w-10 {
+  width: 2.5rem;
+}
+.w-11 {
+  width: 2.75rem;
+}
 .max-w-6xl {
   max-width: 72rem;
 }
 .max-w-md {
   max-width: 28rem;
+}
+.flex-none {
+  flex: none;
+}
+.grow {
+  flex-grow: 1;
 }
 .appearance-none {
   -webkit-appearance: none;
@@ -577,14 +613,23 @@ Ensure the default browser behavior of the `hidden` attribute.
 .place-items-center {
   place-items: center;
 }
+.content-center {
+  align-content: center;
+}
 .items-center {
   align-items: center;
+}
+.items-stretch {
+  align-items: stretch;
 }
 .justify-center {
   justify-content: center;
 }
 .self-center {
   align-self: center;
+}
+.self-stretch {
+  align-self: stretch;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -663,6 +708,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-8 {
   padding-top: 2rem;
+}
+.pl-20 {
+  padding-left: 5rem;
+}
+.pr-20 {
+  padding-right: 5rem;
 }
 .text-center {
   text-align: center;
