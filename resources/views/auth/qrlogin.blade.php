@@ -14,24 +14,24 @@
 <body class="bg-purple-50 flex flex-wrap items-center justify-center min-h-screen">
     <div class="flex place-items-center">
         <div class="w-1/2">
-            <h1 class="font-montserrat text-8xl text-center font-black text-purple-400 ">
+            <h1 class="font-montserrat text-8xl text-center font-black text-purple-500 ">
                 moVRin
             </h1>
         </div>
         <div class="w-1/2 ">
             <div class="shadow-2xl shadow-purple-500/20 bg-white rounded-3xl p-8 max-w-md self-center">
-                <h1 class="font-montserrat text-3xl text-purple-400 font-normal text-center">
+                <h1 class="font-montserrat text-3xl text-purple-500 font-normal text-center">
                     Log in
                 </h1>
-                <h1 class="font-montserrat text-5xl text-purple-400 font-extrabold text-center mt-6">
+                <h1 class="font-montserrat text-5xl text-purple-500 font-extrabold text-center mt-6">
                     Hello Again!
                 </h1>
-                <h3 class="font-montserrat text-xl text-purple-400 font-medium text-center">
+                <h3 class="font-montserrat text-xl text-purple-500 font-medium text-center">
                     Welcome back, you've been missed!
                 </h3>
 
                 <div class="camera">
-                    <h3 class="font-montserrat text-xl text-purple-400 font-extrabold text-center mt-10 -mb-14">
+                    <h3 class="font-montserrat text-xl text-purple-500 font-extrabold text-center mt-10 -mb-14">
                         Scan your QR Code here
                     </h3>
                     <div class="flex items-stretch">
@@ -60,7 +60,7 @@
                         <div class="flex-none w-11"></div>
                     </div>
 
-                    <a class="group relative w-full flex justify-center py-2 px-4 text-sm font-medium rounded-full mt-2 text-purple-400 border-2 border-purple-400 hover:bg-purple-700 hover:border-purple-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500" href="{{ route('login') }}" role="button">Login with email and password</a>
+                    <a class="group relative w-full flex justify-center py-2 px-4 text-sm font-medium rounded-full mt-2 text-purple-500 border-2 border-purple-500 hover:bg-purple-700 hover:border-purple-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500" href="{{ route('login') }}" role="button">Login with email and password</a>
                 </div>
             </div>
         </div>
