@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
     <style>
         [x-cloak] {
@@ -111,7 +112,7 @@
                         <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 px-4 xl:p-0 gap-y-4 md:gap-6">
                             <div class="md:col-span-3 xl:col-span-3">
                                 <p class="text-center text-9xl md:text-9xl text-gray-50 font-black">
-                                    300
+                                    0
                                 </p>
                             </div>
                         </div>
@@ -142,7 +143,7 @@
                             </div>
                         </div>
                         <div class="flex gap-2 md:gap-2 p-6">
-                            <a href="{{ route('gameplay') }}" class="bg-purple-600 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
+                            <a href="{{ route('gameplay') }}" class="bg-purple-500 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
                                 Play!
                             </a>
                         </div>
@@ -150,7 +151,7 @@
                 </div>
 
                 <div class="shadow-gray-500/20 shadow-2xl rounded-3xl md:col-span-2 xl:col-span-3 bg-white flex flex-col justify-between">
-                <div class="flex flex-col space-y-6 md:h-full md:justify-between">
+                    <div class="flex flex-col space-y-6 md:h-full md:justify-between">
                         <div class="flex gap-2 md:gap-4 justify-between items-center">
                             <div class="flex flex-col space-y-4 p-4">
                                 <h2 class="font-montserrat text-4xl text-gray-500 font-black leading-tight">
@@ -164,7 +165,7 @@
                             </div>
                         </div>
                         <div class="flex gap-2 md:gap-2 p-6">
-                            <a href="{{ route('gameplay') }}" class="bg-purple-600 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
+                            <a href="{{ route('gameplay') }}" class="bg-purple-500 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
                                 Play!
                             </a>
                         </div>
@@ -186,7 +187,7 @@
                             </div>
                         </div>
                         <div class="flex gap-2 md:gap-2 p-6">
-                            <a href="{{ route('gameplay') }}" class="bg-purple-600 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
+                            <a href="{{ route('gameplay') }}" class="bg-purple-500 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
                                 Play!
                             </a>
                         </div>
@@ -201,29 +202,55 @@
                     Your performance.
                 </h2>
             </div>
+
             <div class="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-1 px-4 xl:p-0 gap-y-4 md:gap-6">
-                <div class="shadow-purple-500/50 shadow-2xl rounded-3xl md:col-span-1 xl:col-span-1 bg-gradient-to-r from-purple-500 to-purple-700 p-6">
+                <div class="shadow-gray-500/20 shadow-2xl rounded-3xl md:col-span-1 xl:col-span-1 bg-white p-6">
                     <div class="flex flex-col space-y-6 md:h-full md:justify-between">
                         <div class="flex gap-2 md:gap-4 justify-between items-center">
-                            <div class="flex flex-col space-y-4">
-                                <h2 class="font-montserrat text-4xl text-white font-black leading-tight">
-                                    Daily burned calories.
+                            <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 px-4 xl:p-0 gap-y-4 md:gap-6">
+                                <h2 class="font-montserrat text-4xl text-purple-500 font-black leading-tight">
+                                    This week's calories burned.
                                 </h2>
-                                <div class="flex flex-col space-y-4">
-                                    <h2 class="font-montserrat text-1xl text-white font-normal leading-tight">
-                                        Kat sini graph
-                                    </h2>
+                                <div class="md:col-span-2 xl:col-span-2">
+                                    <canvas id="chartLine"></canvas>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
             <!-- End Third Row -->
         </div>
     </main>
     <!-- End Main -->
+
+    <!-- Chart line -->
+    <script>
+        const labels = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: "Burned calories",
+                backgroundColor: "hsl(269, 97%, 85%)",
+                borderColor: "hsl(271, 91%, 65%)",
+                borderWidth: 2,
+                fill: true,
+                tension: 0.3,
+                data: [0, 10, 5, 2, 20, 30, 45],
+            }, ],
+        };
+
+        const configLineChart = {
+            type: "line",
+            data,
+            options: {},
+        };
+
+        var chartLine = new Chart(
+            document.getElementById("chartLine"),
+            configLineChart
+        );
+    </script>
 </body>
 
 </html>
