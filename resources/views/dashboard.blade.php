@@ -43,7 +43,7 @@
                 <li>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <button class="p-2 rounded hover:bg-gray-200">
+                        <button class="px-3 xl:px-4 py-2 text-gray-600 rounded-full hover:bg-red-200">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 stroke-current text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                             </svg>
@@ -77,7 +77,7 @@
             <!-- First Row -->
             <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
                 <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
-                    Good day, {{ Auth::user()->name }}
+                    Good day, <span class="font-bold text-purple-500">{{ Auth::user()->name }}</span> 👋
                 </h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-6 px-4 xl:p-0 gap-y-4 md:gap-6">
@@ -117,10 +117,110 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <!-- End First Row -->
 
+            <!-- Second Row -->
+            <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
+                <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
+                    Your daily goals.
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-6 xl:grid-cols-9 px-4 xl:p-0 gap-y-4 md:gap-6">
+                <div class="shadow-gray-500/20 shadow-2xl rounded-3xl md:col-span-2 xl:col-span-3 bg-white">
+                    <div class="flex flex-col space-y-6 md:h-full md:justify-between">
+                        <div class="flex gap-2 md:gap-4 justify-between items-center">
+                            <div class="flex flex-col space-y-4 p-4">
+                                <h2 class="font-montserrat text-4xl text-gray-500 font-black leading-tight">
+                                    Goal 1
+                                </h2>
+                                <div class="flex flex-col space-y-2">
+                                    <h2 class="font-montserrat text-1xl text-gray-500 font-normal leading-tight">
+                                        Beat your own highscore.
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 md:gap-2 p-6">
+                            <a href="{{ route('gameplay') }}" class="bg-purple-600 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
+                                Play!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shadow-gray-500/20 shadow-2xl rounded-3xl md:col-span-2 xl:col-span-3 bg-white flex flex-col justify-between">
+                <div class="flex flex-col space-y-6 md:h-full md:justify-between">
+                        <div class="flex gap-2 md:gap-4 justify-between items-center">
+                            <div class="flex flex-col space-y-4 p-4">
+                                <h2 class="font-montserrat text-4xl text-gray-500 font-black leading-tight">
+                                    Goal 2
+                                </h2>
+                                <div class="flex flex-col space-y-2">
+                                    <h2 class="font-montserrat text-1xl text-gray-500 font-normal leading-tight">
+                                        Burned at least 300 Calories.
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 md:gap-2 p-6">
+                            <a href="{{ route('gameplay') }}" class="bg-purple-600 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
+                                Play!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shadow-gray-500/20 shadow-2xl rounded-3xl md:col-span-2 xl:col-span-3 bg-white">
+                    <div class="flex flex-col space-y-6 md:h-full md:justify-between">
+                        <div class="flex gap-2 md:gap-4 justify-between items-center">
+                            <div class="flex flex-col space-y-4 p-4">
+                                <h2 class="font-montserrat text-4xl text-gray-500 font-black leading-tight">
+                                    Goal 3
+                                </h2>
+                                <div class="flex flex-col space-y-2">
+                                    <h2 class="font-montserrat text-1xl text-gray-500 font-normal leading-tight">
+                                        Get in the game with at least 10 minutes.
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 md:gap-2 p-6">
+                            <a href="{{ route('gameplay') }}" class="bg-purple-600 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
+                                Play!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Second Row -->
+
+            <!-- Third Row -->
+            <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
+                <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
+                    Your performance.
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-1 px-4 xl:p-0 gap-y-4 md:gap-6">
+                <div class="shadow-purple-500/50 shadow-2xl rounded-3xl md:col-span-1 xl:col-span-1 bg-gradient-to-r from-purple-500 to-purple-700 p-6">
+                    <div class="flex flex-col space-y-6 md:h-full md:justify-between">
+                        <div class="flex gap-2 md:gap-4 justify-between items-center">
+                            <div class="flex flex-col space-y-4">
+                                <h2 class="font-montserrat text-4xl text-white font-black leading-tight">
+                                    Daily burned calories.
+                                </h2>
+                                <div class="flex flex-col space-y-4">
+                                    <h2 class="font-montserrat text-1xl text-white font-normal leading-tight">
+                                        Kat sini graph
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Third Row -->
         </div>
     </main>
     <!-- End Main -->
