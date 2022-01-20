@@ -91,7 +91,7 @@
                                 </h2>
 
                                 <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 150px; height: 150px; border-radius: 50%;" class="mb-3 mx-auto">
-             
+
                                 <form enctype="multipart/form-data" action="{{ route('profile-update') }}" method="POST">
                                     @csrf
                                     <div>
@@ -168,6 +168,21 @@
                                         <div>
                                             <h2 class="font-montserrat font-semibold text-purple-500 text-2xl">
                                                 arthur
+                                            </h2>
+
+                                            <h2 class="font-montserrat font-italic text-purple-500 text-sm">
+                                                Offline
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-purple-200 shadow-purple-600/100 shadow-2xl rounded-3xl p-6 flex flex-col space-y-4 mb-2">
+                                    <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5 xl:p-0 gap-y-4 md:gap-6">
+                                        <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 50px; height: 50px; border-radius: 50%;">
+                                        <div>
+                                            <h2 class="font-montserrat font-semibold text-purple-500 text-2xl">
+                                                Lancelot
                                             </h2>
 
                                             <h2 class="font-montserrat font-italic text-purple-500 text-sm">
