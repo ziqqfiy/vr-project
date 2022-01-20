@@ -32,7 +32,7 @@
                     <a class="px-3 xl:px-4 py-2 text-gray-100 rounded-full bg-purple-500 shadow-purple-500/30 shadow-xl cursor-default select-none hover:text-gray-100">Dashboard</a>
                 </li>
                 <li>
-                    <a href="{{ route('profile') }}" class="px-3 xl:px-4 py-2 text-gray-600 rounded-full hover:bg-purple-200 hover:text-purple-500">My Account</a>
+                    <a href="{{ route('profile') }}" class="px-3 xl:px-4 py-2 text-gray-600 rounded-full hover:bg-purple-200 hover:text-purple-500">Profile</a>
                 </li>
             </ul>
             <ul class="flex items-center gap-6">
@@ -81,6 +81,7 @@
                     Good day, <span class="font-bold text-purple-500">{{ Auth::user()->name }}</span> 👋
                 </h2>
             </div>
+
             <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-6 px-4 xl:p-0 gap-y-4 md:gap-6">
                 <div class="shadow-purple-500/50 shadow-2xl rounded-3xl md:col-span-2 xl:col-span-3 bg-gradient-to-r from-purple-500 to-purple-700 p-6">
                     <div class="flex flex-col space-y-6 md:h-full md:justify-between">

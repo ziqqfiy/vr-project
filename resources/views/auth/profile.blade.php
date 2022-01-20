@@ -31,7 +31,7 @@
                     <a href="{{ route('dashboard') }}" class="px-3 xl:px-4 py-2 text-gray-600 rounded-full hover:bg-purple-200 hover:text-purple-500">Dashboard</a>
                 </li>
                 <li>
-                    <a class="px-3 xl:px-4 py-2 text-gray-100 rounded-full bg-purple-500 shadow-purple-500/30 shadow-xl cursor-default select-none hover:text-gray-100">My Account</a>
+                    <a class="px-3 xl:px-4 py-2 text-gray-100 rounded-full bg-purple-500 shadow-purple-500/30 shadow-xl cursor-default select-none hover:text-gray-100">Profile</a>
                 </li>
             </ul>
             <ul class="flex items-center gap-6">
@@ -63,35 +63,124 @@
             <ul class="p-4">
                 <li class="px-4 py-2 rounded hover:bg-gray-200">
                     <a href="#" class="flex items-center gap-4">
-                        My Account
+                        Profile
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
     <!-- End Nav -->
-    <h4>My Profile</h4>
 
-    <div class="mt-5">
-        <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 150px; height: 150px; border-radius: 50%;">
-
-        <form enctype="multipart/form-data" action="{{ route('profile-update') }}" method="POST">
-            @csrf
-            <input type="file" name="avatar">
-
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Username</label>
-                <input type="name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{old('name', Auth::user()->name)}}">
+    <!-- Start Main -->
+    <main class="container mx-w-6xl mx-auto py-4">
+        <div class="flex flex-col space-y-8">
+            <!-- First Row -->
+            <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
+                <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
+                    Your profile, <span class="font-bold text-purple-500">{{ Auth::user()->name }}</span>
+                </h2>
             </div>
 
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{old('email', Auth::user()->email)}}">
-            </div>
+            <div class="grid grid-cols-1 md:grid-cols-5 xl:grid-cols-6 px-4 xl:p-0 gap-y-4 md:gap-6">
+                <div class="shadow-gray-500/20 shadow-2xl rounded-3xl md:col-span-3 xl:col-span-4 p-6 bg-white flex flex-col justify-between">
+                    <div class="flex flex-col">
+                        <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 px-4 xl:p-0 gap-y-4 md:gap-6">
+                            <div class="md:col-span-3 xl:col-span-3">
+                                <h2 class="font-montserrat text-4xl text-purple-500 font-black leading-tight mb-4">
+                                    Profile.
+                                </h2>
 
-            <button type="submit" class="btn btn-primary">Update</button>
-        </form>
-    </div>
+                                <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 150px; height: 150px; border-radius: 50%;" class="mb-3 mx-auto">
+             
+                                <form enctype="multipart/form-data" action="{{ route('profile-update') }}" method="POST">
+                                    @csrf
+                                    <div>
+                                        <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-500 -mb-8">Avatar</label>
+                                        <input type="file" name="avatar" class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 text-gray-900 focus:outline-none sm:text-sm mb-3">
+                                    </div>
+
+                                    <div>
+                                        <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-500 -mb-8">Username</label>
+                                        <input id="username" name="name" autocomplete="email" required class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('name') is-invalid @enderror mb-3" value="{{old('name')}}" placeholder="{{ Auth::user()->name }}">
+                                        @error('name')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    <div>
+                                        <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-500 -mb-8">Email</label>
+                                        <input id="email-address" name="email" type="email" autocomplete="email" required class=" appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('email') is-invalid @enderror mb-16" value="{{old('email')}}" placeholder="{{ Auth::user()->email }}">
+                                        @error('email')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                                        Update
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shadow-purple-500/50 shadow-2xl rounded-3xl md:col-span-2 xl:col-span-2 bg-purple-500 p-6">
+                    <div class="flex flex-col space-y-6 md:h-full md:justify-between">
+                        <div class="flex gap-2 md:gap-4 justify-between items-center">
+                            <div class="flex flex-col space-y-4">
+                                <h2 class="font-montserrat text-4xl text-white font-black leading-tight">
+                                    Friends.
+                                </h2>
+
+                                <div class="bg-purple-200 shadow-purple-600/100 shadow-2xl rounded-3xl p-6 flex flex-col space-y-4 mb-2">
+                                    <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5 xl:p-0 gap-y-4 md:gap-6">
+                                        <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 50px; height: 50px; border-radius: 50%;">
+                                        <div>
+                                            <h2 class="font-montserrat font-semibold text-purple-500 text-2xl">
+                                                penyapubasah
+                                            </h2>
+
+                                            <h2 class="font-montserrat font-italic text-purple-500 text-sm">
+                                                Offline
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-purple-200 shadow-purple-600/100 shadow-2xl rounded-3xl p-6 flex flex-col space-y-4 mb-2">
+                                    <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5 xl:p-0 gap-y-4 md:gap-6">
+                                        <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 50px; height: 50px; border-radius: 50%;">
+                                        <div>
+                                            <h2 class="font-montserrat font-semibold text-purple-500 text-2xl">
+                                                chemong
+                                            </h2>
+
+                                            <h2 class="font-montserrat font-italic text-purple-500 text-sm">
+                                                Offline
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-purple-200 shadow-purple-600/100 shadow-2xl rounded-3xl p-6 flex flex-col space-y-4 mb-2">
+                                    <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5 xl:p-0 gap-y-4 md:gap-6">
+                                        <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 50px; height: 50px; border-radius: 50%;">
+                                        <div>
+                                            <h2 class="font-montserrat font-semibold text-purple-500 text-2xl">
+                                                arthur
+                                            </h2>
+
+                                            <h2 class="font-montserrat font-italic text-purple-500 text-sm">
+                                                Offline
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End First Row -->
+    </main>
     <!-- End Main -->
 </body>
 
