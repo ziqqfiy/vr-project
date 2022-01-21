@@ -135,7 +135,7 @@
                         <div class="flex flex-col">
                             <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 px-4 xl:p-0 gap-y-4 md:gap-6">
                                 <div class="md:col-span-3 xl:col-span-3">
-                                    <img src="https://i.pinimg.com/originals/05/67/41/05674100b1dd4a5f2c4b6daf4a522e25.jpg" style="width: 150px; height: 150px;" class="mb-5 mx-auto">
+                                    <img src="https://i.pinimg.com/originals/05/67/41/05674100b1dd4a5f2c4b6daf4a522e25.jpg" style="width: 150px; height: 150px;" class="mb-4 mx-auto">
 
                                     <a href="https://i.pinimg.com/originals/05/67/41/05674100b1dd4a5f2c4b6daf4a522e25.jpg" download class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
                                         Download QR Code

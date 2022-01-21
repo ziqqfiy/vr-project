@@ -107,7 +107,7 @@
 
                 <div class="shadow-yellow-500/50 shadow-2xl rounded-3xl md:col-span-2 xl:col-span-2 p-6 bg-gradient-to-r from-yellow-400 to-yellow-500 flex flex-col justify-between">
                     <div class="flex flex-col">
-                        <p class="font-montserrat text-white font-black text-2xl xl:mb-5 text-center">
+                        <p class="font-montserrat text-white font-bold text-2xl xl:mb-5 text-center">
                             Total calories burned
                         </p>
                         <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 xl:p-0 gap-y-4 md:gap-6">
@@ -122,7 +122,7 @@
 
                 <div class="shadow-blue-500/50 shadow-2xl rounded-3xl md:col-span-2 xl:col-span-2 p-6 bg-gradient-to-r from-blue-500 to-blue-700 flex flex-col justify-between">
                     <div class="flex flex-col">
-                        <p class="font-montserrat text-white font-black text-2xl xl:mb-5 text-center">
+                        <p class="font-montserrat text-white font-bold text-2xl xl:mb-5 text-center">
                             Your highest score
                         </p>
                         <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 xl:p-0 gap-y-4 md:gap-6">
@@ -222,7 +222,7 @@
                 <div class="shadow-red-500/50 shadow-2xl rounded-3xl md:col-span-1 xl:col-span-2 p-6 bg-gradient-to-r from-red-400 to-red-500 flex flex-col justify-between">
                     <div class="flex flex-col">
                         <p class="font-montserrat text-white font-bold text-2xl mb-3 xl:mb-4 text-center">
-                            Total time Active
+                            Total time active
                         </p>
                         <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 xl:p-0 gap-y-4 md:gap-6">
                             <div class="md:col-span-3 xl:col-span-3">
@@ -237,7 +237,7 @@
                 <div class="shadow-green-500/50 shadow-2xl rounded-3xl md:col-span-1 xl:col-span-2 p-6 bg-gradient-to-r from-green-400 to-green-500 flex flex-col justify-between">
                     <div class="flex flex-col">
                         <p class="font-montserrat text-white font-bold text-2xl mb-3 xl:mb-4 text-center">
-                            Calories Burned Last Game
+                            Calories burned last game
                         </p>
                         <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 xl:p-0 gap-y-4 md:gap-6">
                             <div class="md:col-span-3 xl:col-span-3">
