@@ -1,3 +1,5 @@
+@extends('auth.layout')
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +13,20 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="assets/mekseng.js"></script>
     <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
+    <script>
+        document.onkeydown = function(evt) {
+            evt = evt || window.event;
+            var isEscape = false;
+            if ("key" in evt) {
+                isEscape = (evt.key === "Escape" || evt.key === "Esc");
+            } else {
+                isEscape = (evt.keyCode === 27);
+            }
+            if (isEscape) {
+                window.location.href = "{{ route('dashboard') }}";
+            }
+        };
+    </script>
 </head>
 
 <body>
@@ -198,3 +214,4 @@
 </body>
 
 </html>
+@endsection
