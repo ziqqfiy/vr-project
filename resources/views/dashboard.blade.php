@@ -82,8 +82,8 @@
                 </h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-6 px-4 xl:p-0 gap-y-4 md:gap-6">
-                <div class="shadow-purple-500/50 shadow-2xl rounded-3xl md:col-span-2 xl:col-span-3 bg-gradient-to-r from-purple-500 to-purple-700 p-6">
+            <div class="grid grid-cols-1 md:grid-cols-6 xl:grid-cols-6 px-4 xl:p-0 gap-y-4 md:gap-6">
+                <div class="shadow-purple-500/50 shadow-2xl rounded-3xl md:col-span-2 xl:col-span-2 bg-gradient-to-r from-purple-500 to-purple-700 p-6">
                     <div class="flex flex-col space-y-6 md:h-full md:justify-between">
                         <div class="flex gap-2 md:gap-4 justify-between items-center">
                             <div class="flex flex-col space-y-4">
@@ -105,14 +105,29 @@
                     </div>
                 </div>
 
-                <div class="shadow-blue-500/50 shadow-2xl rounded-3xl md:col-span-2 xl:col-span-3 p-6 bg-gradient-to-r from-blue-500 to-blue-700 flex flex-col justify-between">
+                <div class="shadow-yellow-500/50 shadow-2xl rounded-3xl md:col-span-2 xl:col-span-2 p-6 bg-gradient-to-r from-yellow-400 to-yellow-500 flex flex-col justify-between">
                     <div class="flex flex-col">
-                        <p class="font-montserrat text-white font-bold text-2xl mb-2 text-center">
-                            Your highest score.
+                        <p class="font-montserrat text-white font-black text-2xl xl:mb-5 text-center">
+                            Total calories burned
                         </p>
-                        <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 px-4 xl:p-0 gap-y-4 md:gap-6">
+                        <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 xl:p-0 gap-y-4 md:gap-6">
                             <div class="md:col-span-3 xl:col-span-3">
-                                <p class="text-center text-9xl md:text-9xl text-gray-50 font-black">
+                                <p class="text-center text-9xl md:text-8xl text-gray-50 font-black align-middle">
+                                    0
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shadow-blue-500/50 shadow-2xl rounded-3xl md:col-span-2 xl:col-span-2 p-6 bg-gradient-to-r from-blue-500 to-blue-700 flex flex-col justify-between">
+                    <div class="flex flex-col">
+                        <p class="font-montserrat text-white font-black text-2xl xl:mb-5 text-center">
+                            Your highest score
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 xl:p-0 gap-y-4 md:gap-6">
+                            <div class="md:col-span-3 xl:col-span-3">
+                                <p class="text-center text-9xl md:text-8xl text-gray-50 font-black align-middle">
                                     0
                                 </p>
                             </div>
@@ -125,7 +140,7 @@
             <!-- Second Row -->
             <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
                 <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
-                    Your daily goals.
+                    Your daily goals. 🎯
                 </h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-6 xl:grid-cols-9 px-4 xl:p-0 gap-y-4 md:gap-6">
@@ -200,8 +215,39 @@
             <!-- Third Row -->
             <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
                 <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
-                    Your performance.
+                    Your performance. 📊
                 </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 px-4 xl:p-0 gap-y-4 md:gap-6">
+                <div class="shadow-red-500/50 shadow-2xl rounded-3xl md:col-span-1 xl:col-span-2 p-6 bg-gradient-to-r from-red-400 to-red-500 flex flex-col justify-between">
+                    <div class="flex flex-col">
+                        <p class="font-montserrat text-white font-bold text-2xl mb-3 xl:mb-4 text-center">
+                            Total time Active
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 xl:p-0 gap-y-4 md:gap-6">
+                            <div class="md:col-span-3 xl:col-span-3">
+                                <p class="text-center text-9xl md:text-5xl text-gray-50 font-black align-middle">
+                                    1h 30min
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shadow-green-500/50 shadow-2xl rounded-3xl md:col-span-1 xl:col-span-2 p-6 bg-gradient-to-r from-green-400 to-green-500 flex flex-col justify-between">
+                    <div class="flex flex-col">
+                        <p class="font-montserrat text-white font-bold text-2xl mb-3 xl:mb-4 text-center">
+                            Calories Burned Last Game
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 xl:p-0 gap-y-4 md:gap-6">
+                            <div class="md:col-span-3 xl:col-span-3">
+                                <p class="text-center text-9xl md:text-5xl text-gray-50 font-black align-middle">
+                                    1000
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-1 px-4 xl:p-0 gap-y-4 md:gap-6">
@@ -221,6 +267,59 @@
                 </div>
             </div>
             <!-- End Third Row -->
+
+            <!-- Fourth Row -->
+            <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
+                <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
+                    Leaderboard. 🏁
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-1 px-4 xl:p-0 gap-y-4 md:gap-6">
+                <div class="shadow-gray-500/20 shadow-2xl rounded-3xl md:col-span-1 xl:col-span-1 bg-white p-6">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="font-montserrat text-purple-500 text-normal">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Player</th>
+                                    <th scope="col">Highscore</th>
+                                    <th scope="col">Calories Burned</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Chemong</td>
+                                    <td>4500</td>
+                                    <td>4600</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Penyapubasah</td>
+                                    <td>4245</td>
+                                    <td>3000</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Lancelot</td>
+                                    <td>4000</td>
+                                    <td>3000</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>notArthur</td>
+                                    <td>3850</td>
+                                    <td>3000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- End Fourth Row -->
         </div>
     </main>
     <!-- End Main -->

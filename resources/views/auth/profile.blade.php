@@ -77,48 +77,70 @@
             <!-- First Row -->
             <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
                 <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
-                    Your profile, <span class="font-bold text-purple-500">{{ Auth::user()->name }}</span>
+                    Your profile, <span class="font-bold text-purple-500">{{ Auth::user()->name }}</span> 📝
                 </h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-5 xl:grid-cols-6 px-4 xl:p-0 gap-y-4 md:gap-6">
-                <div class="shadow-gray-500/20 shadow-2xl rounded-3xl md:col-span-3 xl:col-span-4 p-6 bg-white flex flex-col justify-between">
-                    <div class="flex flex-col">
-                        <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 px-4 xl:p-0 gap-y-4 md:gap-6">
-                            <div class="md:col-span-3 xl:col-span-3">
-                                <h2 class="font-montserrat text-4xl text-purple-500 font-black leading-tight mb-4">
-                                    Profile.
-                                </h2>
+                <div class="md:col-span-3 xl:col-span-4">
+                    <div class="shadow-gray-500/20 shadow-2xl rounded-3xl p-6 bg-white flex flex-col justify-between">
+                        <div class="flex flex-col">
+                            <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 px-4 xl:p-0 gap-y-4 md:gap-6">
+                                <div class="md:col-span-3 xl:col-span-3">
+                                    <h2 class="font-montserrat text-4xl text-purple-500 font-black leading-tight mb-4">
+                                        Profile.
+                                    </h2>
 
-                                <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 150px; height: 150px; border-radius: 50%;" class="mb-3 mx-auto">
+                                    <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 150px; height: 150px; border-radius: 50%;" class="mb-3 mx-auto">
 
-                                <form enctype="multipart/form-data" action="{{ route('profile-update') }}" method="POST">
-                                    @csrf
-                                    <div>
-                                        <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-500 -mb-8">Avatar</label>
-                                        <input type="file" name="avatar" class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 text-gray-900 focus:outline-none sm:text-sm mb-3">
-                                    </div>
+                                    <form enctype="multipart/form-data" action="{{ route('profile-update') }}" method="POST">
+                                        @csrf
+                                        <div>
+                                            <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-500 -mb-8">Avatar</label>
+                                            <input type="file" name="avatar" class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 text-gray-900 focus:outline-none sm:text-sm mb-3">
+                                        </div>
 
-                                    <div>
-                                        <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-500 -mb-8">Username</label>
-                                        <input id="username" name="name" autocomplete="email" required class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('name') is-invalid @enderror mb-3" value="{{old('name')}}" placeholder="{{ Auth::user()->name }}">
-                                        @error('name')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
+                                        <div>
+                                            <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-500 -mb-8">Username</label>
+                                            <input id="username" name="name" autocomplete="email" required class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('name') is-invalid @enderror mb-3" value="{{old('name')}}" placeholder="{{ Auth::user()->name }}">
+                                            @error('name')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
 
-                                    <div>
-                                        <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-500 -mb-8">Email</label>
-                                        <input id="email-address" name="email" type="email" autocomplete="email" required class=" appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('email') is-invalid @enderror mb-16" value="{{old('email')}}" placeholder="{{ Auth::user()->email }}">
-                                        @error('email')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
+                                        <div>
+                                            <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-500 -mb-8">Email</label>
+                                            <input id="email-address" name="email" type="email" autocomplete="email" required class=" appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('email') is-invalid @enderror mb-16" value="{{old('email')}}" placeholder="{{ Auth::user()->email }}">
+                                            @error('email')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
 
-                                    <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
-                                        Update
-                                    </button>
-                                </form>
+                                        <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                                            Update Profile
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between my-4">
+                        <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
+                            Your QR Code 📷
+                        </h2>
+                    </div>
+
+                    <div class="shadow-gray-500/20 shadow-2xl rounded-3xl p-6 bg-white flex flex-col justify-between">
+                        <div class="flex flex-col">
+                            <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 px-4 xl:p-0 gap-y-4 md:gap-6">
+                                <div class="md:col-span-3 xl:col-span-3">
+                                    <img src="https://i.pinimg.com/originals/05/67/41/05674100b1dd4a5f2c4b6daf4a522e25.jpg" style="width: 150px; height: 150px;" class="mb-5 mx-auto">
+
+                                    <a href="https://i.pinimg.com/originals/05/67/41/05674100b1dd4a5f2c4b6daf4a522e25.jpg" download class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                                        Download QR Code
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -137,7 +159,7 @@
                                         <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 50px; height: 50px; border-radius: 50%;">
                                         <div>
                                             <h2 class="font-montserrat font-semibold text-purple-500 text-2xl">
-                                                penyapubasah
+                                                Penyapubasah
                                             </h2>
 
                                             <h2 class="font-montserrat font-italic text-purple-500 text-sm">
@@ -152,7 +174,7 @@
                                         <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 50px; height: 50px; border-radius: 50%;">
                                         <div>
                                             <h2 class="font-montserrat font-semibold text-purple-500 text-2xl">
-                                                chemong
+                                                Chemong
                                             </h2>
 
                                             <h2 class="font-montserrat font-italic text-purple-500 text-sm">
@@ -167,7 +189,7 @@
                                         <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 50px; height: 50px; border-radius: 50%;">
                                         <div>
                                             <h2 class="font-montserrat font-semibold text-purple-500 text-2xl">
-                                                arthur
+                                                notArthur
                                             </h2>
 
                                             <h2 class="font-montserrat font-italic text-purple-500 text-sm">

@@ -288,6 +288,12 @@ function showStartMenu() {
 }
 
 /********
+ * End Game *
+ ********/
+
+
+
+/********
  * GAME *
  ********/
 
