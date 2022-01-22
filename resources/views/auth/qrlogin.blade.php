@@ -31,34 +31,29 @@
                 </h3>
 
                 <div class="camera">
-                    <h3 class="font-montserrat text-xl text-purple-500 font-extrabold text-center mt-10 -mb-14">
+                    <h3 class="font-montserrat text-xl text-purple-500 font-extrabold text-center mt-10 -mb-12">
                         Scan your QR Code here
                     </h3>
-                    <div class="flex items-stretch">
-                        <div class="flex-none w-11"></div>
-                        <div class="grow">
-                            <video id="preview" class=" content-center"></video>
-                            <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-                            <script type="text/javascript">
-                                let scanner = new Instascan.Scanner({
-                                    video: document.getElementById('preview')
-                                });
-                                scanner.addListener('scan', function(content) {
-                                    window.alert(content);
-                                });
-                                Instascan.Camera.getCameras().then(function(cameras) {
-                                    if (cameras.length > 0) {
-                                        scanner.start(cameras[0]);
-                                    } else {
-                                        window.alert('No cameras found.');
-                                    }
-                                }).catch(function(e) {
-                                    console.error(e);
-                                });
-                            </script>
-                        </div>
-                        <div class="flex-none w-11"></div>
-                    </div>
+
+                    <video id="preview" class="mx-auto"></video>
+                    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+                    <script type="text/javascript">
+                        let scanner = new Instascan.Scanner({
+                            video: document.getElementById('preview')
+                        });
+                        scanner.addListener('scan', function(content) {
+                            window.alert(content);
+                        });
+                        Instascan.Camera.getCameras().then(function(cameras) {
+                            if (cameras.length > 0) {
+                                scanner.start(cameras[0]);
+                            } else {
+                                window.alert('No cameras found.');
+                            }
+                        }).catch(function(e) {
+                            console.error(e);
+                        });
+                    </script>
 
                     <a class="group relative w-full flex justify-center py-2 px-4 text-sm font-medium rounded-full mt-2 text-purple-500 border-2 border-purple-500 hover:bg-purple-700 hover:border-purple-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500" href="{{ route('login') }}" role="button">Login with email and password</a>
                 </div>

@@ -538,6 +538,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-mb-14 {
   margin-bottom: -3.5rem;
 }
+.-mb-12 {
+  margin-bottom: -3rem;
+}
 .block {
   display: block;
 }
@@ -690,6 +693,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .rounded-3xl {
   border-radius: 1.5rem;
+}
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 .border {
   border-width: 1px;
