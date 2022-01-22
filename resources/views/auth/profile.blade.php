@@ -28,15 +28,15 @@
             </a>
             <ul class="flex items-center space-x-4 text-sm font-semibold">
                 <li>
-                    <a href="{{ route('dashboard') }}" class="px-3 xl:px-4 py-2 text-gray-600 rounded-full hover:bg-purple-200 hover:text-purple-500">Dashboard</a>
+                    <a href="{{ route('dashboard') }}" class="font-montserrat px-3 xl:px-4 py-2 text-gray-600 rounded-full hover:bg-purple-200 hover:text-purple-500">Dashboard</a>
                 </li>
                 <li>
-                    <a class="px-3 xl:px-4 py-2 text-gray-100 rounded-full bg-purple-500 shadow-purple-500/30 shadow-xl cursor-default select-none hover:text-gray-100">Profile</a>
+                    <a class="font-montserrat px-3 xl:px-4 py-2 text-gray-100 rounded-full bg-purple-500 shadow-purple-500/30 shadow-xl cursor-default select-none hover:text-gray-100">Profile</a>
                 </li>
             </ul>
             <ul class="flex items-center gap-6">
                 <li>
-                    <p class="text-sm font-sans text-gray-800 font-semibold tracking-wider cursor-default">
+                    <p class="font-montserrat text-sm text-gray-800 font-semibold tracking-wider cursor-default">
                         {{ Auth::user()->name }}
                     </p>
                 </li>
@@ -83,7 +83,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-5 xl:grid-cols-6 px-4 xl:p-0 gap-y-4 md:gap-6">
                 <div class="md:col-span-3 xl:col-span-4">
-                    <div class="shadow-gray-500/20 shadow-2xl rounded-3xl p-6 bg-white flex flex-col justify-between">
+                    <div class="shadow-2xl shadow-purple-500/20 rounded-3xl p-6 bg-white flex flex-col justify-between">
                         <div class="flex flex-col">
                             <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 px-4 xl:p-0 gap-y-4 md:gap-6">
                                 <div class="md:col-span-3 xl:col-span-3">
@@ -116,7 +116,7 @@
                                             @enderror
                                         </div>
 
-                                        <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                                        <button type="submit" class="font-montserrat group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
                                             Update Profile
                                         </button>
                                     </form>
@@ -125,19 +125,19 @@
                         </div>
                     </div>
 
-                    <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between my-4">
+                    <div class="col-span-1 md:col-span-2 lg:col-span-4 flex justify-between my-4">
                         <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
                             Your QR Code 📷
                         </h2>
                     </div>
 
-                    <div class="shadow-gray-500/20 shadow-2xl rounded-3xl p-6 bg-white flex flex-col justify-between">
+                    <div class="shadow-2xl shadow-purple-500/20 rounded-3xl p-6 bg-white flex flex-col justify-between">
                         <div class="flex flex-col">
                             <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 px-4 xl:p-0 gap-y-4 md:gap-6">
                                 <div class="md:col-span-3 xl:col-span-3">
                                     <img src="https://i.pinimg.com/originals/05/67/41/05674100b1dd4a5f2c4b6daf4a522e25.jpg" style="width: 150px; height: 150px;" class="mb-4 mx-auto">
 
-                                    <a href="https://i.pinimg.com/originals/05/67/41/05674100b1dd4a5f2c4b6daf4a522e25.jpg" download class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                                    <a href="https://i.pinimg.com/originals/05/67/41/05674100b1dd4a5f2c4b6daf4a522e25.jpg" download class="font-montserrat group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
                                         Download QR Code
                                     </a>
                                 </div>

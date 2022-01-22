@@ -29,15 +29,15 @@
             </a>
             <ul class="flex items-center space-x-4 text-sm font-semibold">
                 <li>
-                    <a class="px-3 xl:px-4 py-2 text-gray-100 rounded-full bg-purple-500 shadow-purple-500/30 shadow-xl cursor-default select-none hover:text-gray-100">Dashboard</a>
+                    <a class="font-montserrat px-3 xl:px-4 py-2 text-gray-100 rounded-full bg-purple-500 shadow-purple-500/30 shadow-xl cursor-default select-none hover:text-gray-100">Dashboard</a>
                 </li>
                 <li>
-                    <a href="{{ route('profile') }}" class="px-3 xl:px-4 py-2 text-gray-600 rounded-full hover:bg-purple-200 hover:text-purple-500">Profile</a>
+                    <a href="{{ route('profile') }}" class="font-montserrat px-3 xl:px-4 py-2 text-gray-600 rounded-full hover:bg-purple-200 hover:text-purple-500">Profile</a>
                 </li>
             </ul>
             <ul class="flex items-center gap-6">
                 <li>
-                    <p class="text-sm font-sans text-gray-800 font-semibold tracking-wider cursor-default">
+                    <p class="font-montserrat text-sm text-gray-800 font-semibold tracking-wider cursor-default">
                         {{ Auth::user()->name }}
                     </p>
                 </li>
@@ -98,7 +98,7 @@
                             </div>
                         </div>
                         <div class="flex gap-2 md:gap-4">
-                            <a href="{{ route('gameplay') }}" class="bg-purple-600 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
+                            <a href="{{ route('gameplay') }}" class="font-montserrat bg-purple-600 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
                                 Play!
                             </a>
                         </div>
@@ -144,7 +144,7 @@
                 </h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-6 xl:grid-cols-9 px-4 xl:p-0 gap-y-4 md:gap-6">
-                <div class="shadow-gray-500/20 shadow-2xl rounded-3xl md:col-span-2 xl:col-span-3 bg-white">
+                <div class="shadow-2xl shadow-purple-500/20 rounded-3xl md:col-span-2 xl:col-span-3 bg-white">
                     <div class="flex flex-col space-y-6 md:h-full md:justify-between">
                         <div class="flex gap-2 md:gap-4 justify-between items-center">
                             <div class="flex flex-col space-y-4 p-4">
@@ -159,14 +159,14 @@
                             </div>
                         </div>
                         <div class="flex gap-2 md:gap-2 p-6">
-                            <a href="{{ route('gameplay') }}" class="bg-purple-500 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
+                            <a href="{{ route('gameplay') }}" class="font-montserrat bg-purple-500 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
                                 Play!
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="shadow-gray-500/20 shadow-2xl rounded-3xl md:col-span-2 xl:col-span-3 bg-white flex flex-col justify-between">
+                <div class="shadow-2xl shadow-purple-500/20 rounded-3xl md:col-span-2 xl:col-span-3 bg-white flex flex-col justify-between">
                     <div class="flex flex-col space-y-6 md:h-full md:justify-between">
                         <div class="flex gap-2 md:gap-4 justify-between items-center">
                             <div class="flex flex-col space-y-4 p-4">
@@ -181,14 +181,14 @@
                             </div>
                         </div>
                         <div class="flex gap-2 md:gap-2 p-6">
-                            <a href="{{ route('gameplay') }}" class="bg-purple-500 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
+                            <a href="{{ route('gameplay') }}" class="font-montserrat bg-purple-500 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
                                 Play!
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="shadow-gray-500/20 shadow-2xl rounded-3xl md:col-span-2 xl:col-span-3 bg-white">
+                <div class="shadow-2xl shadow-purple-500/20 rounded-3xl md:col-span-2 xl:col-span-3 bg-white">
                     <div class="flex flex-col space-y-6 md:h-full md:justify-between">
                         <div class="flex gap-2 md:gap-4 justify-between items-center">
                             <div class="flex flex-col space-y-4 p-4">
@@ -203,7 +203,7 @@
                             </div>
                         </div>
                         <div class="flex gap-2 md:gap-2 p-6">
-                            <a href="{{ route('gameplay') }}" class="bg-purple-500 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
+                            <a href="{{ route('gameplay') }}" class="font-montserrat bg-purple-500 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
                                 Play!
                             </a>
                         </div>
@@ -251,7 +251,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-1 px-4 xl:p-0 gap-y-4 md:gap-6">
-                <div class="shadow-gray-500/20 shadow-2xl rounded-3xl md:col-span-1 xl:col-span-1 bg-white p-6">
+                <div class="shadow-2xl shadow-purple-500/20 rounded-3xl md:col-span-1 xl:col-span-1 bg-white p-6">
                     <div class="flex flex-col space-y-6 md:h-full md:justify-between">
                         <div class="flex gap-2 md:gap-4 justify-between items-center">
                             <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 px-4 xl:p-0 gap-y-4 md:gap-6">
@@ -276,7 +276,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-1 px-4 xl:p-0 gap-y-4 md:gap-6">
-                <div class="shadow-gray-500/20 shadow-2xl rounded-3xl md:col-span-1 xl:col-span-1 bg-white p-6">
+                <div class="shadow-2xl shadow-purple-500/20 rounded-3xl md:col-span-1 xl:col-span-1 bg-white p-6">
                     <div class="table-responsive">
                         <table class="table">
                             <thead class="font-montserrat text-purple-500 text-normal">
@@ -288,27 +288,28 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr class="font-montserrat">
                                     <th scope="row">1</th>
                                     <td>Chemong</td>
                                     <td>4500</td>
                                     <td>4600</td>
                                 </tr>
-                                <tr>
+
+                                <tr class="font-montserrat">
                                     <th scope="row">2</th>
                                     <td>Penyapubasah</td>
                                     <td>4245</td>
                                     <td>3000</td>
                                 </tr>
 
-                                <tr>
+                                <tr class="font-montserrat">
                                     <th scope="row">3</th>
                                     <td>Lancelot</td>
                                     <td>4000</td>
                                     <td>3000</td>
                                 </tr>
 
-                                <tr>
+                                <tr class="font-montserrat">
                                     <th scope="row">4</th>
                                     <td>notArthur</td>
                                     <td>3850</td>
