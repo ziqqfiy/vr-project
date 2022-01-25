@@ -112,7 +112,7 @@
                         <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 xl:p-0 gap-y-4 md:gap-6">
                             <div class="md:col-span-3 xl:col-span-3">
                                 <p class="text-center text-9xl md:text-8xl text-gray-50 font-black align-middle">
-                                    0
+                                    {{$data->calories}}
                                 </p>
                             </div>
                         </div>
@@ -127,7 +127,7 @@
                         <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 xl:p-0 gap-y-4 md:gap-6">
                             <div class="md:col-span-3 xl:col-span-3">
                                 <p class="text-center text-9xl md:text-8xl text-gray-50 font-black align-middle">
-                                    0
+                                    {{$data->time}}
                                 </p>
                             </div>
                         </div>
@@ -137,6 +137,35 @@
             <!-- End First Row -->
 
             <!-- Second Row -->
+
+            <!-- Form Add Goal -->
+            <!-- <form class="mt-5" action="{{ route('add-goal') }}" method="POST">
+                @csrf
+                <h4>Add Goal</h4>
+
+                <input class="special" type="hidden" name="id" value="{{$data->id}}">
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Description</label>
+                    <input type="text" class="form-control @error('description') is-invalid @enderror" name="description" placeholder="Exercise for 10 mins..">
+                    @error('description')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add Goal</button>
+            </form>
+
+            //Display all goal
+
+            @foreach($goal as $goal)
+            <ul class="list-group">
+                <li class="list-group-item disabled">
+                    {{ $goal->description }}
+                </li>
+            </ul>
+            @endforeach -->
+
             <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
                 <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
                     Your daily goals. 🎯
