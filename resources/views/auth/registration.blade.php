@@ -30,7 +30,7 @@
                     Welcome aboard!
                 </h3>
 
-                <form class="mt-16" action="{{ route('register-store') }}" method="POST">
+                <form class="mt-16" action="{{ route('register-user') }}" method="POST">
                     @csrf
 
                     @if( $errors->any() )
@@ -47,7 +47,7 @@
 
                     <div>
                         <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-500 -mb-8">Username</label>
-                        <input id="username" name="name" autocomplete="email" required class=" appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('name') is-invalid @enderror mb-3" value="{{old('name')}}" placeholder="movrin">
+                        <input id="username" name="username" required class=" appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('name') is-invalid @enderror mb-3" value="{{old('username')}}" placeholder="movrin">
                         @error('name')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror

@@ -29,7 +29,7 @@
                     Welcome back, you've been missed!
                 </h3>
 
-                <form class="mt-16" action="{{ route('login-store') }}" method="POST">
+                <form class="mt-16" action="{{ route('login-user') }}" method="POST">
                     @csrf
 
                     @if( session('error') )
@@ -53,7 +53,7 @@
                     </div>
 
                     <p class="font-montserrat font-normal text-center">
-                        Don't have an account yet? <a href="{{ route('register') }}" class=" text-purple-500 ">Sign Up</a>
+                        Don't have an account yet? <a href="{{ route('registration') }}" class=" text-purple-500 ">Sign Up</a>
                     </p>
 
                     <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">

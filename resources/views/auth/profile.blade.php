@@ -37,7 +37,7 @@
             <ul class="flex items-center gap-6">
                 <li>
                     <p class="font-montserrat text-sm text-gray-800 font-semibold tracking-wider cursor-default">
-                        {{ Auth::user()->name }}
+                        {{ $data->username }}
                     </p>
                 </li>
                 <li>
@@ -77,7 +77,7 @@
             <!-- First Row -->
             <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
                 <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
-                    Your profile, <span class="font-bold text-purple-500">{{ Auth::user()->name }}</span> 📝
+                    Your profile, <span class="font-bold text-purple-500">{{ $data->username }}</span> 📝
                 </h2>
             </div>
 
@@ -91,10 +91,13 @@
                                         Profile.
                                     </h2>
 
-                                    <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 150px; height: 150px; border-radius: 50%;" class="mb-3 mx-auto">
+                                    <img src="/uploads/avatars/{{ $data->avatar }}" style="width: 150px; height: 150px; border-radius: 50%;" class="mb-3 mx-auto">
 
-                                    <form enctype="multipart/form-data" action="{{ route('profile-update') }}" method="POST">
+                                    <form enctype="multipart/form-data" action="{{ route('profile-edit') }}" method="POST">
                                         @csrf
+
+                                        <input class="special" type="hidden" name="id" value="{{$data->id}}">
+                                        
                                         <div>
                                             <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-500 -mb-8">Avatar</label>
                                             <input type="file" name="avatar" class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 text-gray-900 focus:outline-none sm:text-sm mb-3">
@@ -102,7 +105,7 @@
 
                                         <div>
                                             <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-500 -mb-8">Username</label>
-                                            <input id="username" name="name" autocomplete="email" required class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('name') is-invalid @enderror mb-3" value="{{old('name')}}" placeholder="{{ Auth::user()->name }}">
+                                            <input id="username" name="username" required class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('name') is-invalid @enderror mb-3"value="{{old('username')}}" placeholder="{{ $data->username }}">
                                             @error('name')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -110,7 +113,7 @@
 
                                         <div>
                                             <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-500 -mb-8">Email</label>
-                                            <input id="email-address" name="email" type="email" autocomplete="email" required class=" appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('email') is-invalid @enderror mb-16" value="{{old('email')}}" placeholder="{{ Auth::user()->email }}">
+                                            <input id="email-address" name="email" type="email" autocomplete="email" class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('name') is-invalid @enderror mb-3" value="{{old('email')}}" placeholder="{{ $data->email }}" disabled>
                                             @error('email')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -156,7 +159,7 @@
 
                                 <div class="bg-purple-200 shadow-purple-600/100 shadow-2xl rounded-3xl p-6 flex flex-col space-y-4 mb-2">
                                     <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5 xl:p-0 gap-y-4 md:gap-6">
-                                        <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 50px; height: 50px; border-radius: 50%;">
+                                        <img src="/uploads/avatars/default.jpg" style="width: 50px; height: 50px; border-radius: 50%;">
                                         <div>
                                             <h2 class="font-montserrat font-semibold text-purple-500 text-2xl">
                                                 Penyapubasah
@@ -171,7 +174,7 @@
 
                                 <div class="bg-purple-200 shadow-purple-600/100 shadow-2xl rounded-3xl p-6 flex flex-col space-y-4 mb-2">
                                     <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5 xl:p-0 gap-y-4 md:gap-6">
-                                        <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 50px; height: 50px; border-radius: 50%;">
+                                        <img src="/uploads/avatars/default4.jpg" style="width: 50px; height: 50px; border-radius: 50%;">
                                         <div>
                                             <h2 class="font-montserrat font-semibold text-purple-500 text-2xl">
                                                 Chemong
@@ -186,7 +189,7 @@
 
                                 <div class="bg-purple-200 shadow-purple-600/100 shadow-2xl rounded-3xl p-6 flex flex-col space-y-4 mb-2">
                                     <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5 xl:p-0 gap-y-4 md:gap-6">
-                                        <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 50px; height: 50px; border-radius: 50%;">
+                                        <img src="/uploads/avatars/default2.jpg" style="width: 50px; height: 50px; border-radius: 50%;">
                                         <div>
                                             <h2 class="font-montserrat font-semibold text-purple-500 text-2xl">
                                                 notArthur
@@ -201,7 +204,7 @@
 
                                 <div class="bg-purple-200 shadow-purple-600/100 shadow-2xl rounded-3xl p-6 flex flex-col space-y-4 mb-2">
                                     <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5 xl:p-0 gap-y-4 md:gap-6">
-                                        <img src="/uploads/avatars/{{ $user->avatar }}" style="width: 50px; height: 50px; border-radius: 50%;">
+                                        <img src="/uploads/avatars/default3.jpg" style="width: 50px; height: 50px; border-radius: 50%;">
                                         <div>
                                             <h2 class="font-montserrat font-semibold text-purple-500 text-2xl">
                                                 Lancelot

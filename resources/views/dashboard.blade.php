@@ -38,7 +38,7 @@
             <ul class="flex items-center gap-6">
                 <li>
                     <p class="font-montserrat text-sm text-gray-800 font-semibold tracking-wider cursor-default">
-                        {{ Auth::user()->name }}
+                        {{ $data->username }}
                     </p>
                 </li>
                 <li>
@@ -64,7 +64,6 @@
             <ul class="p-4">
                 <li class="px-4 py-2 rounded hover:bg-gray-200">
                     <a href="#" class="flex items-center gap-4">
-                        My Account
                     </a>
                 </li>
             </ul>
@@ -78,7 +77,7 @@
             <!-- First Row -->
             <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
                 <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
-                    Good day, <span class="font-bold text-purple-500">{{ Auth::user()->name }}</span> 👋
+                    Good day, <span class="font-bold text-purple-500">{{ $data->username }}</span> 👋
                 </h2>
             </div>
 
