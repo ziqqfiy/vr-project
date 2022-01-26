@@ -219,31 +219,47 @@
                 </h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-6 xl:grid-cols-9 px-4 xl:p-0 gap-y-4 md:gap-6">
-                <div class="shadow-2xl shadow-purple-500/20 rounded-3xl md:col-span-2 xl:col-span-3 bg-white p-6">
+                <div class="shadow-2xl shadow-pink-500/50 rounded-3xl md:col-span-2 xl:col-span-2 bg-gradient-to-r from-pink-400 to-pink-500 p-6">
                     <form action="{{ route('add-goal') }}" method="POST">
                         @csrf
 
                         <input class="special" type="hidden" name="id" value="{{$data->id}}">
 
-                        <h2 class="font-montserrat text-4xl text-gray-500 font-black leading-tight mb-4">Add Goal</h2>
+                        <h2 class="font-montserrat text-4xl text-white font-black leading-tight mb-4">Add Goal</h2>
 
                         <div class="mb-3">
-                            <input type="text" name="description" class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('description') is-invalid @enderror mb-20" placeholder="Exercise for 10 mins..">
+                            <input type="text" name="description" class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-pink-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-pink-700 focus:border-pink-700 focus:z-10 sm:text-sm @error('description') is-invalid @enderror mb-20" placeholder="Exercise for 10 mins.">
                             @error('description')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
 
-                        <button type="submit" class="font-montserrat bg-purple-500 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">Add Goal</button>
+                        <button type="submit" class="font-montserrat bg-pink-500 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-pink-800 hover:text-white">Add Goal</button>
                     </form>
                 </div>
 
                 @foreach($goal as $goal)
-                <ul class="list-group">
-                    <li class="list-group-item disabled">
-                        {{ $goal->description }}
-                    </li>
-                </ul>
+                <div class="shadow-2xl shadow-purple-500/20 rounded-3xl md:col-span-2 xl:col-span-2 bg-white">
+                    <div class="flex flex-col space-y-6 md:h-full md:justify-between">
+                        <div class="flex gap-2 md:gap-4 justify-between items-center">
+                            <div class="flex flex-col space-y-4 p-4">
+                                <h2 class="font-montserrat text-4xl text-gray-500 font-black leading-tight">
+                                    Goal 
+                                </h2>
+                                <div class="flex flex-col space-y-2">
+                                    <h2 class="font-montserrat text-1xl text-gray-500 font-normal leading-tight">
+                                        {{ $goal->description }}
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 md:gap-2 p-6">
+                            <a href="{{ route('gameplay') }}" class="font-montserrat bg-pink-500 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">
+                                Done
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 @endforeach
 
             </div>

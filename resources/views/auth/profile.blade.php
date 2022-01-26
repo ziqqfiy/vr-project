@@ -97,7 +97,7 @@
                                         @csrf
 
                                         <input class="special" type="hidden" name="id" value="{{$data->id}}">
-                                        
+
                                         <div>
                                             <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-500 -mb-8">Avatar</label>
                                             <input type="file" name="avatar" class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 text-gray-900 focus:outline-none sm:text-sm mb-3">
@@ -105,7 +105,7 @@
 
                                         <div>
                                             <label for="exampleInputEmail1" class="form-label font-montserrat font-semibold text-purple-500 -mb-8">Username</label>
-                                            <input id="username" name="username" required class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('name') is-invalid @enderror mb-3"value="{{old('username')}}" placeholder="{{ $data->username }}">
+                                            <input id="username" name="username" required class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('name') is-invalid @enderror mb-3" value="{{old('username')}}" placeholder="{{ $data->username }}">
                                             @error('name')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -138,7 +138,11 @@
                         <div class="flex flex-col">
                             <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 px-4 xl:p-0 gap-y-4 md:gap-6">
                                 <div class="md:col-span-3 xl:col-span-3">
-                                    {{ $qrcode }}
+                                    <div class="mb-3 mx-auto">
+                                        <span>
+                                            {{ $qrcode }}
+                                        </span>
+                                    </div>
 
                                     <a href="#" download class="font-montserrat group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
                                         Download QR Code

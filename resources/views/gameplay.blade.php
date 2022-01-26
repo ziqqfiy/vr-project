@@ -21,7 +21,7 @@
                 isEscape = (evt.keyCode === 27);
             }
             if (isEscape) {
-                window.location.href = "{{ route('dashboard') }}";
+                window.location.href = "dashboard";
             }
         };
     </script>
