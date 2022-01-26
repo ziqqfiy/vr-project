@@ -303,9 +303,9 @@
                     </div>
                 </div>
             </div>
-            <!-- End Third Row -->
+            <!-- End Fourth Row -->
 
-            <!-- Fourth Row -->
+            <!-- Fifth Row -->
             <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
                 <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
                     Leaderboard. 🏁
@@ -357,7 +357,7 @@
                     </div>
                 </div>
             </div>
-            <!-- End Fourth Row -->
+            <!-- End Fifth Row -->
         </div>
     </main>
     <!-- End Main -->
