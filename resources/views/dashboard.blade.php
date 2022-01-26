@@ -74,6 +74,7 @@
     <!-- Start Main -->
     <main class="container mx-w-6xl mx-auto py-4">
         <div class="flex flex-col space-y-8">
+
             <!-- First Row -->
             <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
                 <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
@@ -112,7 +113,7 @@
                         <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 xl:p-0 gap-y-4 md:gap-6">
                             <div class="md:col-span-3 xl:col-span-3">
                                 <p class="text-center text-9xl md:text-8xl text-gray-50 font-black align-middle">
-                                    {{$data->calories}}
+                                    {{$score->calories}}
                                 </p>
                             </div>
                         </div>
@@ -127,7 +128,7 @@
                         <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 xl:p-0 gap-y-4 md:gap-6">
                             <div class="md:col-span-3 xl:col-span-3">
                                 <p class="text-center text-9xl md:text-8xl text-gray-50 font-black align-middle">
-                                    {{$data->time}}
+                                    {{$score->time}}
                                 </p>
                             </div>
                         </div>
@@ -137,35 +138,6 @@
             <!-- End First Row -->
 
             <!-- Second Row -->
-
-            <!-- Form Add Goal -->
-            <!-- <form class="mt-5" action="{{ route('add-goal') }}" method="POST">
-                @csrf
-                <h4>Add Goal</h4>
-
-                <input class="special" type="hidden" name="id" value="{{$data->id}}">
-
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Description</label>
-                    <input type="text" class="form-control @error('description') is-invalid @enderror" name="description" placeholder="Exercise for 10 mins..">
-                    @error('description')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <button type="submit" class="btn btn-primary">Add Goal</button>
-            </form>
-
-            //Display all goal
-
-            @foreach($goal as $goal)
-            <ul class="list-group">
-                <li class="list-group-item disabled">
-                    {{ $goal->description }}
-                </li>
-            </ul>
-            @endforeach -->
-
             <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
                 <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
                     Your daily goals. 🎯
@@ -240,7 +212,44 @@
             </div>
             <!-- End Second Row -->
 
-            <!-- Third Row -->
+            <!-- Start Third Row -->
+            <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
+                <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
+                    Your own personalized goals. 💪
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-6 xl:grid-cols-9 px-4 xl:p-0 gap-y-4 md:gap-6">
+                <div class="shadow-2xl shadow-purple-500/20 rounded-3xl md:col-span-2 xl:col-span-3 bg-white p-6">
+                    <form action="{{ route('add-goal') }}" method="POST">
+                        @csrf
+
+                        <input class="special" type="hidden" name="id" value="{{$data->id}}">
+
+                        <h2 class="font-montserrat text-4xl text-gray-500 font-black leading-tight mb-4">Add Goal</h2>
+
+                        <div class="mb-3">
+                            <input type="text" name="description" class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('description') is-invalid @enderror mb-20" placeholder="Exercise for 10 mins..">
+                            @error('description')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <button type="submit" class="font-montserrat bg-purple-500 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">Add Goal</button>
+                    </form>
+                </div>
+
+                @foreach($goal as $goal)
+                <ul class="list-group">
+                    <li class="list-group-item disabled">
+                        {{ $goal->description }}
+                    </li>
+                </ul>
+                @endforeach
+
+            </div>
+            <!-- End Third Row -->
+
+            <!-- Forth Row -->
             <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
                 <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
                     Your performance. 📊

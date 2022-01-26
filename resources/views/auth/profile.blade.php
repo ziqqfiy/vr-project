@@ -28,7 +28,7 @@
             </a>
             <ul class="flex items-center space-x-4 text-sm font-semibold">
                 <li>
-                    <a href="{{ route('dashboard') }}" class="font-montserrat px-3 xl:px-4 py-2 text-gray-600 rounded-full hover:bg-purple-200 hover:text-purple-500">Dashboard</a>
+                    <a href="dashboard" class="font-montserrat px-3 xl:px-4 py-2 text-gray-600 rounded-full hover:bg-purple-200 hover:text-purple-500">Dashboard</a>
                 </li>
                 <li>
                     <a class="font-montserrat px-3 xl:px-4 py-2 text-gray-100 rounded-full bg-purple-500 shadow-purple-500/30 shadow-xl cursor-default select-none hover:text-gray-100">Profile</a>
@@ -138,9 +138,9 @@
                         <div class="flex flex-col">
                             <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 px-4 xl:p-0 gap-y-4 md:gap-6">
                                 <div class="md:col-span-3 xl:col-span-3">
-                                    <img src="https://i.pinimg.com/originals/05/67/41/05674100b1dd4a5f2c4b6daf4a522e25.jpg" style="width: 150px; height: 150px;" class="mb-4 mx-auto">
+                                    {{ $qrcode }}
 
-                                    <a href="https://i.pinimg.com/originals/05/67/41/05674100b1dd4a5f2c4b6daf4a522e25.jpg" download class="font-montserrat group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                                    <a href="#" download class="font-montserrat group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
                                         Download QR Code
                                     </a>
                                 </div>

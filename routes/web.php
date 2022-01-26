@@ -1,15 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GoalController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ScoreController;
 use App\Http\Controllers\GameplayController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CustomAuthController;
-use App\Http\Controllers\Auth\LogoutController;
-use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\Auth\QRloginController;
-use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,10 +38,18 @@ Route::get('/dashboard', [ DashboardController::class, 'index' ])->name('dashboa
 
 //User profile
 Route::get('/profile', [UserController::class, 'profile'])->name('profile')->middleware('isLoggedIn');
+Route::get('/profile', [UserController::class, 'generateQR'])->name('profile')->middleware('isLoggedIn');
 Route::post('/profile', [UserController::class, 'editProfile'])->name('profile-edit');
 
 //Gameplay
 Route::get('/gameplay', [ GameplayController::class, 'index' ])->name('gameplay')->middleware('isLoggedIn');
 
-// Route::get('/dashboard', [GoalController::class, 'view'])->name('view-goal')->middleware('isLoggedIn');
-// Route::post('/dashboard', [GoalController::class, 'create'])->name('add-goal')->middleware('isLoggedIn');
+//Score
+Route::get('/dashboard', [ ScoreController::class, 'index' ])->name('score')->middleware('isLoggedIn');
+
+//Leaderboard
+//Route::get('/dashboard', [ LeaderboardController::class, 'display' ])->name('leaderboard')->middleware('isLoggedIn');
+
+//Add Goal
+Route::get('/dashboard', [GoalController::class, 'view'])->name('view-goal')->middleware('isLoggedIn');
+Route::post('/dashboard', [GoalController::class, 'create'])->name('add-goal')->middleware('isLoggedIn');

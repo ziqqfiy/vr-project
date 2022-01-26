@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Goal;
 use App\Models\User;
+use App\Models\Score;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -16,9 +17,11 @@ class GoalController extends Controller
         {
             $data = User::where('id', '=', Session::get('loginId'))->first();
         }
-
+        
+        $score = Score::where('user_id', $data->id)->get()->first();
         $goal = Goal::where('user_id', $data->id)->get();
-        return view('dashboard', compact('data', 'goal'));
+
+        return view('dashboard', compact('data', 'goal', 'score'));
     }
 
     public function create(Request $request)
@@ -38,6 +41,9 @@ class GoalController extends Controller
         $goal->description = $request->description;
         $goal->save();
 
-        return redirect('dashboard')->with('success', 'Goal added');
+        $score = Score::where('user_id', $data->id)->get()->first();
+        $goal = Goal::where('user_id', $data->id)->get();
+
+        return view('dashboard', compact('data', 'score', 'goal'));
     }
 }

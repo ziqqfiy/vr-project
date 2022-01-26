@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Goal;
 use App\Models\User;
 use App\Models\Score;
 use Illuminate\Http\Request;
@@ -18,7 +19,9 @@ class ScoreController extends Controller
             $data = User::where('id', '=', Session::get('loginId'))->first();
         }
 
-        $goal = Score::where('user_id', $data->id)->get();
-        return view('dashboard', compact('data', 'time', 'calories'));
+        $goal = Goal::where('user_id', $data->id)->get();
+        $score = Score::where('user_id', $data->id)->get()->first();
+
+        return view('dashboard', compact('data', 'score', 'goal'));
     }
 }

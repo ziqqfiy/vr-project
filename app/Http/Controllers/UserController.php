@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class UserController extends Controller
 {
@@ -36,4 +37,17 @@ class UserController extends Controller
         $data->save();
         return redirect('profile');
     }
+
+    public function generateQR()
+    {
+        $data = array();
+        if(Session::has('loginId'))
+        {
+            $data = User::where('id', '=', Session::get('loginId'))->first();
+        }
+
+        $qrcode = QrCode::size(150)->generate(User::where('id', '=', Session::get('loginId'))->get());
+        return view('auth.profile', compact('data', 'qrcode'));
+    }
+
 }

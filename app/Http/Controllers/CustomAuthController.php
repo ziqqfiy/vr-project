@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Score;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -31,7 +32,11 @@ class CustomAuthController extends Controller
         $user->username = $request->username;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+
         $res = $user->save();
+        $score = new Score();
+        $score->user_id = $user->id;
+        $score->save();
 
         if($res)
         {
@@ -39,7 +44,7 @@ class CustomAuthController extends Controller
         }
         else
             return back()->with('fail', 'Something wrong. Check your input.');
-
+    
     }
 
     public function loginUser(Request $request)

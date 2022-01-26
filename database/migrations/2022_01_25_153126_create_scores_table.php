@@ -15,8 +15,8 @@ class CreateScoresTable extends Migration
     {
         Schema::create('scores', function (Blueprint $table) {
             $table->id();
-            $table->integer('time');
-            $table->float('calories');
+            $table->integer('time')->default(0);
+            $table->float('calories')->default(0);
             $table->timestamps();
         });
     }
