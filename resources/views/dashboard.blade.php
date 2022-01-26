@@ -137,35 +137,6 @@
             <!-- End First Row -->
 
             <!-- Second Row -->
-
-            <!-- Form Add Goal -->
-            <!-- <form class="mt-5" action="{{ route('add-goal') }}" method="POST">
-                @csrf
-                <h4>Add Goal</h4>
-
-                <input class="special" type="hidden" name="id" value="{{$data->id}}">
-
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Description</label>
-                    <input type="text" class="form-control @error('description') is-invalid @enderror" name="description" placeholder="Exercise for 10 mins..">
-                    @error('description')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <button type="submit" class="btn btn-primary">Add Goal</button>
-            </form>
-
-            //Display all goal
-
-            @foreach($goal as $goal)
-            <ul class="list-group">
-                <li class="list-group-item disabled">
-                    {{ $goal->description }}
-                </li>
-            </ul>
-            @endforeach -->
-
             <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
                 <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
                     Your daily goals. 🎯
@@ -240,7 +211,35 @@
             </div>
             <!-- End Second Row -->
 
-            <!-- Third Row -->
+            <!-- Start Third Row -->
+            <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
+                <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
+                    Your own personalized goals. 💪
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-6 xl:grid-cols-9 px-4 xl:p-0 gap-y-4 md:gap-6">
+                <div class="shadow-2xl shadow-purple-500/20 rounded-3xl md:col-span-2 xl:col-span-3 bg-white p-6">
+                    <form action="" method="POST">
+                        @csrf
+                        <h2 class="font-montserrat text-4xl text-gray-500 font-black leading-tight mb-4">Add Goal</h2>
+
+                        <input class="special" type="hidden" name="id" value="{{$data->id}}">
+
+                        <div class="mb-3">
+                            <input type="text" class="appearance-none font-montserrat rounded-full relative block w-full px-3 py-2 border-2 border-purple-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-700 focus:border-purple-700 focus:z-10 sm:text-sm @error('description') is-invalid @enderror mb-20" placeholder="Exercise for 10 mins..">
+                            @error('description')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <button type="submit" class="font-montserrat bg-purple-500 px-5 py-3 w-full text-center md:w-auto rounded-full text-gray-50 text-xs tracking-wider font-semibold hover:bg-purple-800 hover:text-white">Add Goal</button>
+                    </form>
+                </div>
+
+            </div>
+            <!-- End Third Row -->
+
+            <!-- Fourth Row -->
             <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
                 <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
                     Your performance. 📊
@@ -294,9 +293,9 @@
                     </div>
                 </div>
             </div>
-            <!-- End Third Row -->
+            <!-- End Fourth Row -->
 
-            <!-- Fourth Row -->
+            <!-- Fifth Row -->
             <div class="px-4 col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
                 <h2 class="font-montserrat font-semibold text-4xl text-purple-300 leading-snug cursor-default select-none">
                     Leaderboard. 🏁
@@ -348,7 +347,7 @@
                     </div>
                 </div>
             </div>
-            <!-- End Fourth Row -->
+            <!-- End Fifth Row -->
         </div>
     </main>
     <!-- End Main -->
